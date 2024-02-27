@@ -1,0 +1,443 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		561BE3A22B816784001C6F6E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 561BE3A12B816784001C6F6E /* LaunchScreen.storyboard */; };
+		5627374E2B8214530004DBC8 /* Example in Frameworks */ = {isa = PBXBuildFile; productRef = 5627374D2B8214530004DBC8 /* Example */; };
+		562737502B8214530004DBC8 /* FlowNetwork in Frameworks */ = {isa = PBXBuildFile; productRef = 5627374F2B8214530004DBC8 /* FlowNetwork */; };
+		562737522B8214540004DBC8 /* FlowShared in Frameworks */ = {isa = PBXBuildFile; productRef = 562737512B8214530004DBC8 /* FlowShared */; };
+		5659578E2B8E61340011DFB8 /* ExampleUIKit in Frameworks */ = {isa = PBXBuildFile; productRef = 5659578D2B8E61340011DFB8 /* ExampleUIKit */; };
+		568875F82B4DE3B20024465A /* FlowApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568875F72B4DE3B20024465A /* FlowApp.swift */; };
+		568875FA2B4DE3B20024465A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568875F92B4DE3B20024465A /* ContentView.swift */; };
+		568875FE2B4DE3B30024465A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 568875FD2B4DE3B30024465A /* Assets.xcassets */; };
+		568876022B4DE3B30024465A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 568876012B4DE3B30024465A /* Preview Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		561BE3A12B816784001C6F6E /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5659578C2B8E5FD60011DFB8 /* ExampleUIKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = ExampleUIKit; path = Features/ExampleUIKit; sourceTree = "<group>"; };
+		568875F42B4DE3B20024465A /* FlowApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlowApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		568875F72B4DE3B20024465A /* FlowApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowApp.swift; sourceTree = "<group>"; };
+		568875F92B4DE3B20024465A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		568875FD2B4DE3B30024465A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		568875FF2B4DE3B30024465A /* FlowApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FlowApp.entitlements; sourceTree = "<group>"; };
+		568876012B4DE3B30024465A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		568876032B4DE3B30024465A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		56DCBF5D2B4DF852006B4811 /* FlowShared */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = FlowShared; path = Modules/FlowShared; sourceTree = "<group>"; };
+		56DCBF5E2B4DF87B006B4811 /* FlowNetwork */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = FlowNetwork; path = Modules/FlowNetwork; sourceTree = "<group>"; };
+		56FB0F762B65A4D400CC3CDF /* Example */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Example; path = Features/Example; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		568875F12B4DE3B20024465A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5659578E2B8E61340011DFB8 /* ExampleUIKit in Frameworks */,
+				5627374E2B8214530004DBC8 /* Example in Frameworks */,
+				562737502B8214530004DBC8 /* FlowNetwork in Frameworks */,
+				562737522B8214540004DBC8 /* FlowShared in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		568875EB2B4DE3B20024465A = {
+			isa = PBXGroup;
+			children = (
+				5659578C2B8E5FD60011DFB8 /* ExampleUIKit */,
+				56FB0F762B65A4D400CC3CDF /* Example */,
+				56DCBF5E2B4DF87B006B4811 /* FlowNetwork */,
+				56DCBF5D2B4DF852006B4811 /* FlowShared */,
+				568875F62B4DE3B20024465A /* FlowApp */,
+				568875F52B4DE3B20024465A /* Products */,
+				56DCBF602B4DF8A7006B4811 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		568875F52B4DE3B20024465A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				568875F42B4DE3B20024465A /* FlowApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		568875F62B4DE3B20024465A /* FlowApp */ = {
+			isa = PBXGroup;
+			children = (
+				568875F72B4DE3B20024465A /* FlowApp.swift */,
+				568875F92B4DE3B20024465A /* ContentView.swift */,
+				568875FD2B4DE3B30024465A /* Assets.xcassets */,
+				568875FF2B4DE3B30024465A /* FlowApp.entitlements */,
+				568876032B4DE3B30024465A /* Info.plist */,
+				568876002B4DE3B30024465A /* Preview Content */,
+				561BE3A12B816784001C6F6E /* LaunchScreen.storyboard */,
+			);
+			path = FlowApp;
+			sourceTree = "<group>";
+		};
+		568876002B4DE3B30024465A /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				568876012B4DE3B30024465A /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		56DCBF602B4DF8A7006B4811 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		568875F32B4DE3B20024465A /* FlowApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 568876062B4DE3B30024465A /* Build configuration list for PBXNativeTarget "FlowApp" */;
+			buildPhases = (
+				568875F02B4DE3B20024465A /* Sources */,
+				568875F12B4DE3B20024465A /* Frameworks */,
+				568875F22B4DE3B20024465A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FlowApp;
+			packageProductDependencies = (
+				5627374D2B8214530004DBC8 /* Example */,
+				5627374F2B8214530004DBC8 /* FlowNetwork */,
+				562737512B8214530004DBC8 /* FlowShared */,
+				5659578D2B8E61340011DFB8 /* ExampleUIKit */,
+			);
+			productName = FlowApp;
+			productReference = 568875F42B4DE3B20024465A /* FlowApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		568875EC2B4DE3B20024465A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1510;
+				LastUpgradeCheck = 1520;
+				TargetAttributes = {
+					568875F32B4DE3B20024465A = {
+						CreatedOnToolsVersion = 15.1;
+					};
+				};
+			};
+			buildConfigurationList = 568875EF2B4DE3B20024465A /* Build configuration list for PBXProject "FlowApp" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 568875EB2B4DE3B20024465A;
+			packageReferences = (
+			);
+			productRefGroup = 568875F52B4DE3B20024465A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				568875F32B4DE3B20024465A /* FlowApp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		568875F22B4DE3B20024465A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				561BE3A22B816784001C6F6E /* LaunchScreen.storyboard in Resources */,
+				568876022B4DE3B30024465A /* Preview Assets.xcassets in Resources */,
+				568875FE2B4DE3B30024465A /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		568875F02B4DE3B20024465A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				568875FA2B4DE3B20024465A /* ContentView.swift in Sources */,
+				568875F82B4DE3B20024465A /* FlowApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		568876042B4DE3B30024465A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		568876052B4DE3B30024465A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		568876072B4DE3B30024465A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = FlowApp/FlowApp.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_ASSET_PATHS = "\"FlowApp/Preview Content\"";
+				DEVELOPMENT_TEAM = 9DRA485AMF;
+				ENABLE_HARDENED_RUNTIME = YES;
+				"ENABLE_HARDENED_RUNTIME[sdk=macosx*]" = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FlowApp/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Tortoise;
+				INFOPLIST_KEY_LSUIElement = NO;
+				INFOPLIST_KEY_NSCameraUsageDescription = "This sample app uses the camera.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This sample app uses your photo library";
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.flowkit.FlowApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		568876082B4DE3B30024465A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = FlowApp/FlowApp.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_ASSET_PATHS = "\"FlowApp/Preview Content\"";
+				DEVELOPMENT_TEAM = 9DRA485AMF;
+				ENABLE_HARDENED_RUNTIME = YES;
+				"ENABLE_HARDENED_RUNTIME[sdk=macosx*]" = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FlowApp/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Tortoise;
+				INFOPLIST_KEY_LSUIElement = NO;
+				INFOPLIST_KEY_NSCameraUsageDescription = "This sample app uses the camera.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This sample app uses your photo library";
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.flowkit.FlowApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		568875EF2B4DE3B20024465A /* Build configuration list for PBXProject "FlowApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				568876042B4DE3B30024465A /* Debug */,
+				568876052B4DE3B30024465A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		568876062B4DE3B30024465A /* Build configuration list for PBXNativeTarget "FlowApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				568876072B4DE3B30024465A /* Debug */,
+				568876082B4DE3B30024465A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5627374D2B8214530004DBC8 /* Example */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Example;
+		};
+		5627374F2B8214530004DBC8 /* FlowNetwork */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = FlowNetwork;
+		};
+		562737512B8214530004DBC8 /* FlowShared */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = FlowShared;
+		};
+		5659578D2B8E61340011DFB8 /* ExampleUIKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = ExampleUIKit;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 568875EC2B4DE3B20024465A /* Project object */;
+}

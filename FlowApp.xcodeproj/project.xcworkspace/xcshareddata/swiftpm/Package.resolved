@@ -1,0 +1,32 @@
+{
+  "pins" : [
+    {
+      "identity" : "flowkit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/gerardogrisolini/FlowKit.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "7cd24977b0ccc9fd2bd9ef55f755b28d765cf332"
+      }
+    },
+    {
+      "identity" : "resolver",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/hmlongco/Resolver.git",
+      "state" : {
+        "revision" : "97de0b0320036607564af4a60025b48f8d041221",
+        "version" : "1.5.0"
+      }
+    },
+    {
+      "identity" : "swift-syntax",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apple/swift-syntax.git",
+      "state" : {
+        "revision" : "64889f0c732f210a935a0ad7cda38f77f876262d",
+        "version" : "509.1.1"
+      }
+    }
+  ],
+  "version" : 2
+}
