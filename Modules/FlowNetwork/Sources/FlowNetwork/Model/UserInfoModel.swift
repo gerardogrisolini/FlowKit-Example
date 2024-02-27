@@ -11,6 +11,11 @@ public struct UserInfoModel {
     public let id: Int
     public let isAdmin: Bool
     public let date: Date
+    public init(id: Int, isAdmin: Bool, date: Date) {
+        self.id = id
+        self.isAdmin = isAdmin
+        self.date = date
+    }
 }
 
 extension UserInfoModel {
