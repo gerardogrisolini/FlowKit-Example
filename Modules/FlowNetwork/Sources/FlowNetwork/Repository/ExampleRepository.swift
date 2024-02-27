@@ -17,7 +17,6 @@ public class ExampleRepository: ExampleRepositoryProtocol {
 
     public func getUserInfo() async throws -> UserInfoDTO {
         UserInfoDTO(id: 1, isAdmin: true, date: date)
-
     }
 
     public func updateUserInfo(date: Date) async throws {
