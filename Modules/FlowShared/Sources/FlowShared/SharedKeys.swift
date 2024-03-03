@@ -9,7 +9,7 @@ import Foundation
 import FlowKit
 
 public enum SharedKeys: String, Localizable {
-	case ok, cancel
+	case ok, cancel, genericError
 
 	public var localized: String {
 		String(localized: injectedLocalized, bundle: .module)

@@ -5,7 +5,6 @@
 //  Created by Gerardo Grisolini on 03/02/23.
 //
 
-import Foundation
 import FlowShared
 import FlowNetwork
 
@@ -34,14 +33,6 @@ public final class ExampleFlow: FlowProtocol {
         $0.page5 ~ Page5View.node
     }
 
-    public init() { }
-}
-
-// Your flow can have subflows that implement FlowProtocol.
-public final class ExampleLiteFlow: FlowProtocol {
-    public static var route: ExampleRoutes = .exampleLite
-    public var model = InOutEmpty()
-    public let node = Page3View.node
     public init() { }
 }
 

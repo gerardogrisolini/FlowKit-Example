@@ -64,17 +64,6 @@ struct ContentView: View {
     }
 }
 
-struct ErrorView: View, Presentable {
-    let error: String
-    var body: some View {
-        VStack(spacing: 16) {
-            Text(error)
-            Button(SharedKeys.ok) { dismiss() }
-        }
-        .padding()
-    }
-}
-
 #Preview {
     ContentView()
 }
