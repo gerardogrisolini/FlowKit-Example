@@ -58,7 +58,7 @@ struct ContentView: View {
                 let model = try await navigation.flow(route: route).start()
                 print(model)
             } catch {
-                navigation.present(view: ErrorView(error: "\(error)"))
+                navigation.present(view: ErrorView())
             }
         }
     }
