@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import FlowShared
 
 @Observable
 public class InOutModel: InOutProtocol {

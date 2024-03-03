@@ -55,7 +55,7 @@ final class UIKitPage2View: UIViewController, FlowViewProtocol {
         stackView.addArrangedSubview(button)
 
         view.addSubview(stackView)
-		stackView.anchoringTo(boundsOf: view, top: 48, bottom: -48)
+        stackView.anchoringTo(boundsOf: view, top: 250, bottom: -250)
     }
     
     @objc func pressed(_ sender: UIButton) {

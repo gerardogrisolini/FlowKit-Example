@@ -19,7 +19,7 @@ public struct Page1View: FlowViewProtocol, View {
     }
 
 	public var body: some View {
-		VStack {
+        VStack(spacing: 32) {
 			Button(ExampleKeys.page2) {
                 out(.page2)
 			}

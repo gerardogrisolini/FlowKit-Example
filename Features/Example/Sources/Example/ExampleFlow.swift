@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import FlowKit
+import FlowShared
 import FlowNetwork
 
 // Your flow must implement FlowProtocol.
@@ -25,14 +25,23 @@ public final class ExampleFlow: FlowProtocol {
     // This way the builder will automatically build your flow.
     public let node = Page1View.node {
         $0.page2 ~ Page2View.node {
-            $0.page3 ~ ExampleRoutes.exampleLite
+            $0.page3 ~ Page3View.node
             $0.page4 ~ Page4View.node {
                 $0.page5 ~ Page5View.node
             }
+            $0.uikit(InOutEmpty()) ~ Routes.exampleUIKit
         }
         $0.page5 ~ Page5View.node
     }
 
+    public init() { }
+}
+
+// Your flow can have subflows that implement FlowProtocol.
+public final class ExampleLiteFlow: FlowProtocol {
+    public static var route: ExampleRoutes = .exampleLite
+    public var model = InOutEmpty()
+    public let node = Page3View.node
     public init() { }
 }
 
@@ -50,12 +59,13 @@ extension ExampleFlow {
     }
 }
 
+/*
 extension ExampleFlow {
 
     // The behavior variable is optional and customizes the behavior of your flow.
     // You can use the builder to build your behavior declaratively.
     public var behavior: FlowBehavior {
-        FlowBehavior {
+        .init {
             // With Localizables you can replace localized keys with the ones you want to use in your flow.
             Localizables {
                 ExampleKeys.page1 ~ ExampleKeys.page5
@@ -77,7 +87,7 @@ extension ExampleFlow {
     // Out type function that is executed between the navigation of one node and another.
     private func runOut(_ out: any InOutProtocol) async throws -> Results {
         do {
-            let num = Int.random(in: 0..<3)
+            let num = Int.random(in: 0..<5)
             switch num {
             case 0: throw FlowError.generic
             case 1: throw FlowError.invalidModel(String(describing: model))
@@ -97,11 +107,4 @@ extension ExampleFlow {
         InOutEmpty()
     }
 }
-
-// Your flow can have subflows that implement FlowProtocol.
-public final class ExampleLiteFlow: FlowProtocol {
-    public static var route: ExampleRoutes = .exampleLite
-    public var model = InOutEmpty()
-    public let node = Page3View.node
-    public init() { }
-}
+*/

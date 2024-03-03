@@ -14,7 +14,7 @@ struct Page5View: FlowViewProtocol, View {
 	var body: some View {
 		VStack {
 			Button("Ok") {
-				commit(model)
+				commit(model, toRoot: true)
 			}
 		}
         .navigationBarTitle(ExampleKeys.page5, largeMode: true)

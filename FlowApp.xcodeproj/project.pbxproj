@@ -8,10 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		561BE3A22B816784001C6F6E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 561BE3A12B816784001C6F6E /* LaunchScreen.storyboard */; };
-		5627374E2B8214530004DBC8 /* Example in Frameworks */ = {isa = PBXBuildFile; productRef = 5627374D2B8214530004DBC8 /* Example */; };
 		562737502B8214530004DBC8 /* FlowNetwork in Frameworks */ = {isa = PBXBuildFile; productRef = 5627374F2B8214530004DBC8 /* FlowNetwork */; };
 		562737522B8214540004DBC8 /* FlowShared in Frameworks */ = {isa = PBXBuildFile; productRef = 562737512B8214530004DBC8 /* FlowShared */; };
-		5659578E2B8E61340011DFB8 /* ExampleUIKit in Frameworks */ = {isa = PBXBuildFile; productRef = 5659578D2B8E61340011DFB8 /* ExampleUIKit */; };
+		5666D45C2B933B5500632815 /* Example in Frameworks */ = {isa = PBXBuildFile; productRef = 5666D45B2B933B5500632815 /* Example */; };
+		5666D45E2B933B5900632815 /* ExampleUIKit in Frameworks */ = {isa = PBXBuildFile; productRef = 5666D45D2B933B5900632815 /* ExampleUIKit */; };
 		568875F82B4DE3B20024465A /* FlowApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568875F72B4DE3B20024465A /* FlowApp.swift */; };
 		568875FA2B4DE3B20024465A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568875F92B4DE3B20024465A /* ContentView.swift */; };
 		568875FE2B4DE3B30024465A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 568875FD2B4DE3B30024465A /* Assets.xcassets */; };
@@ -38,9 +38,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5659578E2B8E61340011DFB8 /* ExampleUIKit in Frameworks */,
-				5627374E2B8214530004DBC8 /* Example in Frameworks */,
+				5666D45C2B933B5500632815 /* Example in Frameworks */,
 				562737502B8214530004DBC8 /* FlowNetwork in Frameworks */,
+				5666D45E2B933B5900632815 /* ExampleUIKit in Frameworks */,
 				562737522B8214540004DBC8 /* FlowShared in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -115,10 +115,10 @@
 			);
 			name = FlowApp;
 			packageProductDependencies = (
-				5627374D2B8214530004DBC8 /* Example */,
 				5627374F2B8214530004DBC8 /* FlowNetwork */,
 				562737512B8214530004DBC8 /* FlowShared */,
-				5659578D2B8E61340011DFB8 /* ExampleUIKit */,
+				5666D45B2B933B5500632815 /* Example */,
+				5666D45D2B933B5900632815 /* ExampleUIKit */,
 			);
 			productName = FlowApp;
 			productReference = 568875F42B4DE3B20024465A /* FlowApp.app */;
@@ -421,10 +421,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		5627374D2B8214530004DBC8 /* Example */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = Example;
-		};
 		5627374F2B8214530004DBC8 /* FlowNetwork */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = FlowNetwork;
@@ -433,7 +429,11 @@
 			isa = XCSwiftPackageProductDependency;
 			productName = FlowShared;
 		};
-		5659578D2B8E61340011DFB8 /* ExampleUIKit */ = {
+		5666D45B2B933B5500632815 /* Example */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Example;
+		};
+		5666D45D2B933B5900632815 /* ExampleUIKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = ExampleUIKit;
 		};

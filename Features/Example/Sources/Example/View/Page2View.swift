@@ -10,8 +10,9 @@ import FlowNetwork
 import FlowShared
 
 struct Page2View: FlowViewProtocol, View {
+    @EnumAllCases
     enum Out: FlowOutProtocol {
-        case page3, page4
+        case page3, page4, uikit(InOutEmpty)
     }
     enum Event: FlowEventProtocol {
         case update(Date)
@@ -40,6 +41,10 @@ struct Page2View: FlowViewProtocol, View {
 
             Button(ExampleKeys.page4) {
                 out(.page4)
+            }
+
+            Button("UIKit") {
+                out(.uikit(InOutEmpty()))
             }
         }
         .task {

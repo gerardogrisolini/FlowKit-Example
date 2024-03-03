@@ -27,7 +27,6 @@ final class Page5View: UIViewController, FlowViewProtocol {
     }
     
     func setData(with: [String]) {
-        print(with)
 		commit(model)
     }
     

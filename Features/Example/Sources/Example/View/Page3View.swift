@@ -10,6 +10,7 @@ import FlowShared
 
 public struct Page3View: FlowViewProtocol, View {
 	@ObservedObject var viewModel = Page3ViewModel()
+
     public let model: InOutModel
     public init(model: InOutModel = InOutModel()) {
         self.model = model
@@ -50,7 +51,7 @@ public struct Page3View: FlowViewProtocol, View {
 			leading: Button(action: back) {
 				Image(systemName: "chevron.backward")
 			},
-            trailing: Button(action: { commit(InOutModel()) }) {
+            trailing: Button(action: { commit(model) }) {
 				Image(systemName: "xmark.circle")
 			},
 			foregroundColor: .white
