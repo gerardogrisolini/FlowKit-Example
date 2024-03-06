@@ -49,6 +49,9 @@ struct ContentView: View {
             }
             .padding(EdgeInsets(top: 80, leading: 0, bottom: 0, trailing: 0))
         }
+#if os(iOS)
+        .navigationBarHidden(false)
+#endif
         .edgesIgnoringSafeArea(.all)
     }
 

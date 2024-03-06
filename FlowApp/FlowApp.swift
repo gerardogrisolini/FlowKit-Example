@@ -14,7 +14,7 @@ struct FlowApp: App, FlowKitApp {
 //    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
 
     init() {
-        register(navigation: NavigationSwiftUI())
+        register(navigation: .swiftUI)
         register(scope: .application) {
             FlowNetwork() as FlowNetworkProtocol
         }
