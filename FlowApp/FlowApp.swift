@@ -14,7 +14,7 @@ struct FlowApp: App, FlowKitApp {
 //    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
 
     init() {
-        register(navigation: .swiftUI)
+        registerNavigationSwiftUI()
         register(scope: .application) {
             FlowNetwork() as FlowNetworkProtocol
         }
@@ -42,15 +42,20 @@ class AppDelegate: NSObject, UIApplicationDelegate {
     }
 }
 
-class SceneDelegate: UIResponder, UIWindowSceneDelegate {
-    @Injected var navigation: NavigationProtocol
+class SceneDelegate: UIResponder, UIWindowSceneDelegate, FlowKitApp {
     var window: UIWindow?
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         if let windowScene = scene as? UIWindowScene {
 
-            let navigationController = UINavigationController(rootViewController: UIHostingController(rootView: ContentView()))
-            navigation.navigationController = navigationController
+            let navigationController = UINavigationController()
+            registerNavigationUIKit(navigationController: navigationController)
+            register(scope: .application) {
+                FlowNetwork() as FlowNetworkProtocol
+            }
+
+            let rootViewController = UIHostingController(rootView: ContentView())
+            navigationController.setViewControllers([rootViewController], animated: false)
             window = UIWindow(windowScene: windowScene)
             window?.rootViewController = navigationController
             window?.makeKeyAndVisible()
