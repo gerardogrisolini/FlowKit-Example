@@ -8,10 +8,19 @@
 import SwiftUI
 import FlowShared
 
-struct ContentView: View {
-    @Injected var navigation: NavigationProtocol
+public struct ContentView: View, FlowViewProtocol {
+    @EnumAllCases
+    public enum Out: FlowOutProtocol {
+        case example(InOutModel)
+        case exampleUIKit
+    }
 
-    var body: some View {
+    public let model: InOutEmpty
+    public init(model: InOutEmpty = .empty) {
+        self.model = model
+    }
+
+    public var body: some View {
         ZStack {
             LinearGradient(Color.darkStart, Color.darkEnd)
 
@@ -25,7 +34,7 @@ struct ContentView: View {
 
                 Spacer()
 
-                Button(action: { navigate(route: .example) }) {
+                Button(action: { out(.example(InOutModel())) }) {
                     VStack(spacing: 4) {
                         Text("SwiftUI").font(.caption2)
                         Image(systemName: "list.bullet.rectangle")
@@ -35,7 +44,7 @@ struct ContentView: View {
                 }
                 .buttonStyle(DarkButtonStyle())
 
-                Button(action: { navigate(route: .exampleUIKit) }) {
+                Button(action: { out(.exampleUIKit) }) {
                     VStack(spacing: 4) {
                         Text("UIKit").font(.caption2)
                         Image(systemName: "lines.measurement.horizontal")
@@ -55,15 +64,8 @@ struct ContentView: View {
         .edgesIgnoringSafeArea(.all)
     }
 
-    private func navigate(route: Routes) {
-        Task {
-            do {
-                let model = try await navigation.flow(route: route).start()
-                print(model)
-            } catch {
-                navigation.present(view: ErrorView())
-            }
-        }
+    public func onCommit(model: some InOutProtocol) async {
+        print("onCommit: \(model)")
     }
 }
 

@@ -51,7 +51,7 @@ public struct Page3View: FlowViewProtocol, View {
 			leading: Button(action: back) {
 				Image(systemName: "chevron.backward")
 			},
-            trailing: Button(action: { commit(model) }) {
+            trailing: Button(action: { commit(model, toRoot: true) }) {
 				Image(systemName: "xmark.circle")
 			},
 			foregroundColor: .white

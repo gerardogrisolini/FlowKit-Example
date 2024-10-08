@@ -16,6 +16,7 @@
 		568875FA2B4DE3B20024465A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568875F92B4DE3B20024465A /* ContentView.swift */; };
 		568875FE2B4DE3B30024465A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 568875FD2B4DE3B30024465A /* Assets.xcassets */; };
 		568876022B4DE3B30024465A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 568876012B4DE3B30024465A /* Preview Assets.xcassets */; };
+		56A26C092CB455DF00558648 /* ContentFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A26C082CB455DF00558648 /* ContentFlow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		568875FF2B4DE3B30024465A /* FlowApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FlowApp.entitlements; sourceTree = "<group>"; };
 		568876012B4DE3B30024465A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		568876032B4DE3B30024465A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		56A26C082CB455DF00558648 /* ContentFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentFlow.swift; sourceTree = "<group>"; };
 		56DCBF5D2B4DF852006B4811 /* FlowShared */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = FlowShared; path = Modules/FlowShared; sourceTree = "<group>"; };
 		56DCBF5E2B4DF87B006B4811 /* FlowNetwork */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = FlowNetwork; path = Modules/FlowNetwork; sourceTree = "<group>"; };
 		56FB0F762B65A4D400CC3CDF /* Example */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Example; path = Features/Example; sourceTree = "<group>"; };
@@ -74,6 +76,7 @@
 			children = (
 				568875F72B4DE3B20024465A /* FlowApp.swift */,
 				568875F92B4DE3B20024465A /* ContentView.swift */,
+				56A26C082CB455DF00558648 /* ContentFlow.swift */,
 				568875FD2B4DE3B30024465A /* Assets.xcassets */,
 				568875FF2B4DE3B30024465A /* FlowApp.entitlements */,
 				568876032B4DE3B30024465A /* Info.plist */,
@@ -178,6 +181,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				568875FA2B4DE3B20024465A /* ContentView.swift in Sources */,
+				56A26C092CB455DF00558648 /* ContentFlow.swift in Sources */,
 				568875F82B4DE3B20024465A /* FlowApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

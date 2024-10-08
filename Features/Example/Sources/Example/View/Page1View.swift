@@ -14,7 +14,7 @@ public struct Page1View: FlowViewProtocol, View {
         case page5
     }
     public let model: InOutModel
-    public init(model: InOutModel = InOutModel()) {
+    public init(model: InOutModel =  .init()) {
         self.model = model
     }
 

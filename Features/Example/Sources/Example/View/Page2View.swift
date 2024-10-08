@@ -14,6 +14,7 @@ struct Page2View: FlowViewProtocol, View {
     enum Out: FlowOutProtocol {
         case page3, page4, uikit(InOutEmpty)
     }
+    @EnumAllCases
     enum Event: FlowEventProtocol {
         case update(Date)
     }
@@ -53,7 +54,7 @@ struct Page2View: FlowViewProtocol, View {
         .navigationBarTitle(ExampleKeys.page2, largeMode: true)
     }
 
-    func onEventChanged(_ event: Event, _ model: (any InOutProtocol)?) async {
+    func onEventChanged(event: Event, model: some InOutProtocol) async {
         switch event {
         case .update(let date):
             await updateData(date: date)

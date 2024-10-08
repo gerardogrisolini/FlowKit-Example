@@ -15,6 +15,5 @@ public struct ColorfulButtonStyle: ButtonStyle {
             .background(
                 ColorfulBackground(isHighlighted: configuration.isPressed, shape: Circle())
             )
-            .animation(nil)
     }
 }

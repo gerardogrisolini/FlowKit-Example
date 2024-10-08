@@ -13,8 +13,8 @@ let package = Package(
 		)
     ],
 	dependencies: [
-        .package(url: "https://github.com/gerardogrisolini/FlowKit.git", from: "1.0.0")
-	],
+        .package(url: "https://github.com/gerardogrisolini/FlowKit.git", from: "1.0.3")
+    ],
     targets: [
         .target(
             name: "FlowNetwork",

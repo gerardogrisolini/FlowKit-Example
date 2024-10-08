@@ -10,12 +10,12 @@ import FlowNetwork
 import FlowShared
 
 @main
-struct FlowApp: App, FlowKitApp {
+struct FlowApp: App {
 //    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
 
     init() {
-        registerNavigationSwiftUI()
-        register(scope: .application) {
+        FlowKit.initialize()
+        FlowKit.register(scope: .application) {
             FlowNetwork() as FlowNetworkProtocol
         }
     }
@@ -23,7 +23,7 @@ struct FlowApp: App, FlowKitApp {
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .swiftUINavigation()
+                .join(flow: ContentFlow())
         }
     }
 }
@@ -42,15 +42,15 @@ class AppDelegate: NSObject, UIApplicationDelegate {
     }
 }
 
-class SceneDelegate: UIResponder, UIWindowSceneDelegate, FlowKitApp {
+class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         if let windowScene = scene as? UIWindowScene {
 
             let navigationController = UINavigationController()
-            registerNavigationUIKit(navigationController: navigationController)
-            register(scope: .application) {
+            FlowKit.initialize(navigationType: .uiKit(navigationController: navigationController))
+            FlowKit.register(scope: .application) {
                 FlowNetwork() as FlowNetworkProtocol
             }
 

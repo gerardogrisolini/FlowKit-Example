@@ -8,5 +8,5 @@
 import FlowKit
 
 public enum Routes: String, Routable  {
-    case example, exampleLite, exampleUIKit
+    case  home, example, exampleLite, exampleUIKit
 }

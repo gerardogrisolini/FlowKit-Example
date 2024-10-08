@@ -17,6 +17,5 @@ public struct DarkButtonStyle: ButtonStyle {
             .background(
                 DarkBackground(isHighlighted: configuration.isPressed, shape: Circle())
             )
-            .animation(nil)
     }
 }

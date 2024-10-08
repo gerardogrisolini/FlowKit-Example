@@ -100,7 +100,7 @@ public final class UIKitPage4View: UIViewController, FlowViewProtocol {
         super.init(coder: coder)
     }
     
-    public static func factory(model: some InOutProtocol) -> Self {
+    public static func factory(model: some InOutProtocol) async throws -> Self {
         let storyboard = UIStoryboard(name: "Storyboard", bundle: .module)
         let vc = storyboard.instantiateViewController(withIdentifier: "UIKitPage4View") as! UIKitPage4View
         vc.title = ExampleUIKitKeys.page4.localized
