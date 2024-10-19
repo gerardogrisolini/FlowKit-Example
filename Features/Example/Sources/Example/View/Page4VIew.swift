@@ -9,15 +9,16 @@ import SwiftUI
 import FlowShared
 
 struct Page4View: FlowViewProtocol, View {
+    @EnumAllCases
     enum Out: FlowOutProtocol {
-        case page5
+        case page5(InOutModel)
     }
     let model: InOutModel
 
 	var body: some View {
 		VStack {
 			Button(ExampleKeys.page5.localized) {
-				out(.page5)
+				out(.page5(model))
 			}
 		}
         .navigationBarTitle(ExampleKeys.page4, largeMode: true)

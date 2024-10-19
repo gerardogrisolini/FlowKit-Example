@@ -12,7 +12,9 @@ import FlowShared
 struct Page2View: FlowViewProtocol, View {
     @EnumAllCases
     enum Out: FlowOutProtocol {
-        case page3, page4, uikit(InOutEmpty)
+        case page3(InOutModel)
+        case page4(InOutModel)
+        case uikit(InOutEmpty)
     }
     @EnumAllCases
     enum Event: FlowEventProtocol {
@@ -26,6 +28,10 @@ struct Page2View: FlowViewProtocol, View {
     init(model: InOutModel = InOutModel()) {
         self._model = State(initialValue: model)
     }
+    init(model: InOutModel, service: ExampleServiceProtocol) {
+        self.init(model: model)
+        self.exampleService = service
+    }
 
     var body: some View {
         VStack(spacing: 8) {
@@ -37,11 +43,11 @@ struct Page2View: FlowViewProtocol, View {
             }
 
             Button(ExampleKeys.page3) {
-                out(.page3)
+                out(.page3(model))
             }
 
             Button(ExampleKeys.page4) {
-                out(.page4)
+                out(.page4(model))
             }
 
             Button("UIKit") {

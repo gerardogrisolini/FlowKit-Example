@@ -23,14 +23,14 @@ public final class ExampleFlow: FlowProtocol {
     // For each defined navigation event, you must reconnect the corresponding node or flow.
     // This way the builder will automatically build your flow.
     public let node = Page1View.node {
-        $0.page2 ~ Page2View.node {
-            $0.page3 ~ Page3View.node
-            $0.page4 ~ Page4View.node {
-                $0.page5 ~ Page5View.node
+        $0.page2(InOutModel()) ~ Page2View.node {
+            $0.page3(InOutModel()) ~ Page3View.node
+            $0.page4(InOutModel()) ~ Page4View.node {
+                $0.page5(InOutModel()) ~ Page5View.node
             }
             $0.uikit(InOutEmpty()) ~ Routes.exampleUIKit
         }
-        $0.page5 ~ Page5View.node
+        $0.page5(InOutModel()) ~ Page5View.node
     }
 
     public init() { }

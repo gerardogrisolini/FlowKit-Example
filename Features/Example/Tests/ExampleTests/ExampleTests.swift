@@ -1,5 +1,6 @@
 import XCTest
 import FlowNetwork
+import FlowShared
 @testable import Example
 
 final class ExampleTests: XCTestCase {
@@ -8,12 +9,12 @@ final class ExampleTests: XCTestCase {
     }
 
     func testUpdateOnPage2View() async throws {
-        var sut = Page2View()
-        sut.exampleService = ExampleServiceMock()
-        let time = sut.model.time
+        let sut = await Page2View(model: InOutModel(), service: ExampleServiceMock())
+        let time1 = await sut.model.time
         try await Task.sleep(nanoseconds: 1000000000)
         try await sut.test(event: .update(Date()))
-        XCTAssertNotEqual(time, sut.model.time)
+        let time2 = await sut.model.time
+        XCTAssertNotEqual(time1, time2)
     }
 }
 
