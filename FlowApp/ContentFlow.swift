@@ -7,9 +7,9 @@
 
 import FlowShared
 
-public class ContentFlow: FlowProtocol {
+public final class ContentFlow: FlowProtocol {
     public static let route: Routes = .home
-    public var model = InOutEmpty()
+    public let model = InOutEmpty()
 
     public let node = ContentView.node {
         $0.example(InOutModel()) ~ Routes.example

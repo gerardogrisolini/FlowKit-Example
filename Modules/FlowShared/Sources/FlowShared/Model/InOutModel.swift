@@ -8,7 +8,7 @@
 import Foundation
 
 @Observable
-public class InOutModel: InOutProtocol {
+public class InOutModel: InOutProtocol, @unchecked Sendable {
     public var time: String = Date().description
     public required init() {}
     public convenience init(time: String) {

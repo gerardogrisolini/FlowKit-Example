@@ -10,10 +10,13 @@ import FlowShared
 
 struct Page5View: FlowViewProtocol, View {
     let model: InOutModel
+    init(model: InOutModel) {
+        self.model = model
+    }
 
 	var body: some View {
 		VStack {
-			Button("Ok") {
+			Button("Commit") {
 				commit(model, toRoot: true)
 			}
 		}

@@ -8,7 +8,7 @@
 import Foundation
 import FlowKit
 
-public protocol NetworkServiceProtocol {
+@MainActor public protocol NetworkServiceProtocol {
     func getUserInfo() async throws -> UserInfoModel
     func updateUserInfo(date: Date) async throws
 }

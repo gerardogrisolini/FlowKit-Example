@@ -21,15 +21,17 @@ struct Page2View: FlowViewProtocol, View {
         case update(Date)
     }
 
-    var exampleService: ExampleServiceProtocol = NetworkService()
+    let exampleService: ExampleServiceProtocol
 
     @State var model: InOutModel
 
     init(model: InOutModel = InOutModel()) {
         self._model = State(initialValue: model)
+        self.exampleService = NetworkService()
     }
+
     init(model: InOutModel, service: ExampleServiceProtocol) {
-        self.init(model: model)
+        self._model = State(initialValue: model)
         self.exampleService = service
     }
 

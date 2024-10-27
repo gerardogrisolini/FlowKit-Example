@@ -8,7 +8,7 @@
 import Foundation
 import FlowNetwork
 
-protocol ExampleServiceProtocol {
+protocol ExampleServiceProtocol: Sendable {
     func getUserInfo() async throws -> UserInfoModel
     func updateUserInfo(date: Date) async throws
 }

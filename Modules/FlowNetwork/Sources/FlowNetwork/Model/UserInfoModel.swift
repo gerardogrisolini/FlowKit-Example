@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct UserInfoModel {
+public struct UserInfoModel: Sendable {
     public let id: Int
     public let isAdmin: Bool
     public let date: Date

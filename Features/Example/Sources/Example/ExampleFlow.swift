@@ -5,6 +5,7 @@
 //  Created by Gerardo Grisolini on 03/02/23.
 //
 
+import Foundation
 import FlowShared
 import FlowNetwork
 
@@ -12,11 +13,11 @@ import FlowNetwork
 public final class ExampleFlow: FlowProtocol {
 
     // The route variable is mandatory and must be an enum that implements Routable.
-    public static var route: ExampleRoutes = .example
+    public static let route: ExampleRoutes = .example
 
     // The model variable is mandatory, it is an object that implements InOutProtocol 
     // and is the return value you have at the closure or completion of the flow.
-    public var model = InOutModel()
+    public let model = InOutModel()
 
     // The node variable is mandatory and represents the root node of your flow.
     // You can use the builder to construct your flow declaratively.
@@ -41,7 +42,7 @@ extension ExampleFlow {
     // The onStart function is optional and is called when the flow starts.
     // You can use it to carry out checks before the flow starts, to manage settings or more.
     public func onStart(model: some InOutProtocol) async throws -> any InOutProtocol {
-        let networkService = NetworkService()
+        let networkService = await NetworkService()
         let user = try await networkService.getUserInfo()
         guard user.isAdmin else {
             throw FlowError.generic
@@ -50,7 +51,7 @@ extension ExampleFlow {
     }
 }
 
-/*
+
 extension ExampleFlow {
 
     // The behavior variable is optional and customizes the behavior of your flow.
@@ -66,7 +67,7 @@ extension ExampleFlow {
             }
             // With Outs you can set the functions to be performed between the navigation of one node and another.
             Outs {
-                Page2View.Out.page3 ~ runOut
+                Page2View.Out.page3(InOutModel()) ~ runOut
             }
             // With Events you can set the functions to be performed in the flow instead of on the page.
             Events {
@@ -98,4 +99,4 @@ extension ExampleFlow {
         InOutEmpty()
     }
 }
-*/
+

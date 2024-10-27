@@ -8,14 +8,14 @@
 import SwiftUI
 
 public struct OffsetKey: PreferenceKey {
-	public static var defaultValue = CGFloat.zero
+    public static let defaultValue = CGFloat.zero
 	public static func reduce(value: inout CGFloat, nextValue: () -> CGFloat) {
 		value += nextValue()
 	}
 }
 
 public struct SizePreferenceKey: PreferenceKey {
-	public static var defaultValue: CGSize = .zero
+    public static let defaultValue: CGSize = .zero
 	public static func reduce(value: inout CGSize, nextValue: () -> CGSize) {}
 }
 

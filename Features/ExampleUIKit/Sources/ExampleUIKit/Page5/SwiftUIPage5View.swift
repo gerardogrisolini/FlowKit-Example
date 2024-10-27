@@ -1,5 +1,5 @@
 //
-//  Page5View.swift
+//  SwiftUIPage5View.swift
 //  
 //
 //  Created by Gerardo Grisolini on 18/09/23.
@@ -8,13 +8,13 @@
 import UIKit
 import FlowShared
 
-final class Page5View: UIViewController, FlowViewProtocol {
+final class SwiftUIPage5View: UIViewController, FlowViewProtocol {
     
     let model: InOutEmpty
 
     required init(model: InOutEmpty) {
         self.model = model
-        super.init(nibName: "Page5View", bundle: .module)
+        super.init(nibName: "SwiftUIPage5View", bundle: .module)
 		title = ExampleUIKitKeys.page5.localized
     }
     

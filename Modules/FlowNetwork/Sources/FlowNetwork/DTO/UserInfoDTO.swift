@@ -8,7 +8,7 @@
 import Foundation
 
 extension ExampleRepository {
-    public struct UserInfoDTO: Codable {
+    public struct UserInfoDTO: Codable, Sendable {
         let id: Int
         let isAdmin: Bool
         let date: Date

@@ -59,8 +59,8 @@ public struct Page3View: FlowViewProtocol, View {
 #if os(iOS)
 		.navigationBarHidden(true)
 #endif
-        .task {
-            await viewModel.fetchItems()
+        .onAppear {
+            viewModel.fetchItems()
         }
 	}
 }
@@ -69,9 +69,10 @@ public class Page3ViewModel: ObservableObject {
     @Published public var items: [String] = []
     @Published var offset: CGFloat = 0
 
-    func fetchItems() async {
+    @MainActor
+    func fetchItems() {
         let data = (1...100).map { $0.description }
-        await MainActor.run { items = data }
+        items = data
     }
 }
 
