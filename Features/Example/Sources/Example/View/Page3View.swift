@@ -8,13 +8,9 @@
 import SwiftUI
 import FlowShared
 
+@FlowView(InOutModel.self)
 public struct Page3View: FlowViewProtocol, View {
 	@ObservedObject var viewModel = Page3ViewModel()
-
-    public let model: InOutModel
-    public init(model: InOutModel = InOutModel()) {
-        self.model = model
-    }
 
 	private var header: some View {
 		Text("Stretchy Header")

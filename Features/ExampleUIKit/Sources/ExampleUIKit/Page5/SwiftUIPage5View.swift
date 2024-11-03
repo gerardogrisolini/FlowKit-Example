@@ -8,10 +8,9 @@
 import UIKit
 import FlowShared
 
+@FlowView(InOutEmpty.self, init: false)
 final class SwiftUIPage5View: UIViewController, FlowViewProtocol {
     
-    let model: InOutEmpty
-
     required init(model: InOutEmpty) {
         self.model = model
         super.init(nibName: "SwiftUIPage5View", bundle: .module)

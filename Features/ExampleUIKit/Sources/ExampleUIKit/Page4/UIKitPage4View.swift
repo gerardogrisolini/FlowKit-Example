@@ -40,10 +40,12 @@ class MyCollectionViewHeader: UICollectionReusableView {
     }
 }
 
+@FlowView(InOutEmpty.self, init: false)
 public final class UIKitPage4View: UIViewController, FlowViewProtocol {
-    
+
     @IBOutlet weak var collectionView: UICollectionView!
-    
+    var data = InOutEmpty()
+
     let compositionalLayout: UICollectionViewCompositionalLayout = {
         let inset: CGFloat = 2.5
         
@@ -88,7 +90,6 @@ public final class UIKitPage4View: UIViewController, FlowViewProtocol {
         return UICollectionViewCompositionalLayout(section: section)
     }()
 
-    public var model: InOutEmpty
     public var items = (1...48).map { $0.description }
 
     public init(model: InOutEmpty) {
@@ -104,7 +105,7 @@ public final class UIKitPage4View: UIViewController, FlowViewProtocol {
         let storyboard = UIStoryboard(name: "Storyboard", bundle: .module)
         let vc = storyboard.instantiateViewController(withIdentifier: "UIKitPage4View") as! UIKitPage4View
         vc.title = ExampleUIKitKeys.page4.localized
-        vc.model = model as! InOutEmpty
+        vc.data = model as! InOutEmpty
         return vc as! Self
     }
     
@@ -115,7 +116,7 @@ public final class UIKitPage4View: UIViewController, FlowViewProtocol {
     }
     
     @objc public func finishTapped() {
-        commit(model)
+        commit(data)
     }
 }
 

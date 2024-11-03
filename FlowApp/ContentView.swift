@@ -8,16 +8,12 @@
 import SwiftUI
 import FlowShared
 
+@FlowView(InOutEmpty.self)
 public struct ContentView: View, FlowViewProtocol {
-    @EnumAllCases
+    @FlowCases
     public enum Out: FlowOutProtocol {
         case example(InOutModel)
         case exampleUIKit
-    }
-
-    public let model: InOutEmpty
-    public init(model: InOutEmpty = .empty) {
-        self.model = model
     }
 
     public var body: some View {

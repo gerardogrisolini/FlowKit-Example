@@ -8,15 +8,12 @@
 import SwiftUI
 import FlowShared
 
+@FlowView(InOutModel.self)
 public struct Page1View: FlowViewProtocol, View {
-    @EnumAllCases
+    @FlowCases
     public enum Out: FlowOutProtocol {
         case page2(InOutModel)
         case page5(InOutModel)
-    }
-    public let model: InOutModel
-    public init(model: InOutModel =  .init()) {
-        self.model = model
     }
 
 	public var body: some View {

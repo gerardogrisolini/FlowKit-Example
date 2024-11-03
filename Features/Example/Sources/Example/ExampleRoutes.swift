@@ -5,8 +5,11 @@
 //  Created by Gerardo Grisolini on 18/02/24.
 //
 
-import FlowKit
+import FlowShared
 
-public enum ExampleRoutes: String, Routable  {
-    case example, exampleLite, exampleCustom
+@FlowCases
+public enum ExampleRoutes: Routable  {
+    case example(InOutModel)
+    case exampleLite
+    case exampleCustom
 }

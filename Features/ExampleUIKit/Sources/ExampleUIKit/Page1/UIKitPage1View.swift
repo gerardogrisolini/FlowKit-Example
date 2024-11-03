@@ -8,6 +8,7 @@
 import UIKit
 import FlowShared
 
+@FlowView(InOutEmpty.self, init: false)
 public final class UIKitPage1View: UIViewController, FlowViewProtocol {
     public enum Out: FlowOutProtocol {
         case uikit, swiftui, empty
@@ -17,7 +18,6 @@ public final class UIKitPage1View: UIViewController, FlowViewProtocol {
     var reuseIdentifier: String { "cell" }
     public var items = (1...48).map { $0.description }
 
-    public let model: InOutEmpty
     public init(model: InOutEmpty = InOutEmpty()) {
         self.model = model
         super.init(nibName: nil, bundle: nil)

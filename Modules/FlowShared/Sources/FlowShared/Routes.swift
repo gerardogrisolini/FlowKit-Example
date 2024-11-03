@@ -7,6 +7,10 @@
 
 import FlowKit
 
-public enum Routes: String, Routable  {
-    case  home, example, exampleLite, exampleUIKit
+@FlowCases
+public enum Routes: Routable  {
+    case home
+    case example(InOutModel)
+    case exampleLite
+    case exampleUIKit
 }

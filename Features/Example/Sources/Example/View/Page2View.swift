@@ -8,30 +8,35 @@
 import SwiftUI
 import FlowNetwork
 import FlowShared
+extension Date: @retroactive Identifiable {}
+extension Date: @retroactive InOutProtocol { }
 
+@FlowView(InOutModel.self, init: false)
 struct Page2View: FlowViewProtocol, View {
-    @EnumAllCases
+    @FlowCases
     enum Out: FlowOutProtocol {
         case page3(InOutModel)
         case page4(InOutModel)
         case uikit(InOutEmpty)
     }
-    @EnumAllCases
+    @FlowCases
     enum Event: FlowEventProtocol {
         case update(Date)
     }
 
     let exampleService: ExampleServiceProtocol
 
-    @State var model: InOutModel
+    @State var data: InOutModel
 
     init(model: InOutModel = InOutModel()) {
-        self._model = State(initialValue: model)
+        self.model = model
+        self._data = State(initialValue: model)
         self.exampleService = NetworkService()
     }
 
     init(model: InOutModel, service: ExampleServiceProtocol) {
-        self._model = State(initialValue: model)
+        self.model = model
+        self._data = State(initialValue: model)
         self.exampleService = service
     }
 

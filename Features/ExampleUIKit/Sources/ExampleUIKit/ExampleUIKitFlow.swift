@@ -7,10 +7,8 @@
 
 import FlowShared
 
+@Flow(InOutEmpty.self, route: Routes.exampleUIKit)
 public final class ExampleUIKitFlow: FlowProtocol {
-    public static let route: Routes = .exampleUIKit
-    public let model = InOutEmpty()
-
     public let node = UIKitPage1View.node {
         $0.uikit ~ UIKitPage2View.node {
             $0.page4 ~ UIKitPage4View.node
@@ -19,6 +17,4 @@ public final class ExampleUIKitFlow: FlowProtocol {
             $0.shared ~ SwiftUIPage5View.node
         }
     }
-
-    required public init() { }
 }

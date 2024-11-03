@@ -8,12 +8,12 @@
 import UIKit
 import FlowShared
 
+@FlowView(InOutEmpty.self, init: false)
 final class UIKitPage2View: UIViewController, FlowViewProtocol {
     enum Out: FlowOutProtocol {
         case page4
     }
 
-    let model: InOutEmpty
     init(model: InOutEmpty = InOutEmpty()) {
         self.model = model
         super.init(nibName: nil, bundle: nil)

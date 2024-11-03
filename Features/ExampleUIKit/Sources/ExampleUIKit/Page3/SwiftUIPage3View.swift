@@ -8,14 +8,10 @@
 import SwiftUI
 import FlowShared
 
+@FlowView(InOutEmpty.self)
 struct SwiftUIPage3View: View, FlowViewProtocol {
     enum Out: FlowOutProtocol {
         case shared
-    }
-
-    let model: InOutEmpty
-    init(model: InOutEmpty = InOutEmpty()) {
-        self.model = model
     }
 
     var body: some View {
