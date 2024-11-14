@@ -1,0 +1,29 @@
+{
+  "configurations" : [
+    {
+      "id" : "3D304B41-6C95-4CDF-8526-931ABB6FCAD3",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:FlowApp.xcodeproj",
+      "identifier" : "56448FE72CCFF757003435D0",
+      "name" : "FlowApp"
+    }
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:FlowApp.xcodeproj",
+        "identifier" : "56448FFA2CCFF758003435D0",
+        "name" : "FlowAppTests"
+      }
+    }
+  ],
+  "version" : 1
+}
