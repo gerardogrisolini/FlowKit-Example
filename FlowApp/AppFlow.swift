@@ -13,7 +13,7 @@ import FlowShared
 @Flow(InOutEmpty.self, route: Routes.home)
 public final class AppFlow: FlowProtocol {
 
-    private var context: ModelContainer { Resolver.resolve() }
+    @MainActor private var context: ModelContainer { Resolver.resolve() }
 
     public let node = ContentView.node {
         $0.swiftUI ~ Routes.swiftUI
@@ -33,17 +33,11 @@ public final class AppFlow: FlowProtocol {
     private func onEvent(_ event: any FlowEventProtocol) async throws -> any InOutProtocol {
         switch event as! ContentView.Event {
         case .fetch:
-            return try await getData()
+            let itemActor = await ItemActor(modelContainer: context)
+            guard let item = try await itemActor.fetchData().last else {
+                throw FlowError.generic
+            }
+            return item
         }
-    }
-
-    @MainActor
-    private func getData() throws -> ItemModel {
-        var descriptor = FetchDescriptor<Item>(sortBy: [SortDescriptor(\Item.createdAt, order: .reverse)])
-        descriptor.fetchLimit = 1
-        guard let item = try context.mainContext.fetch(descriptor).first else {
-            throw FlowError.generic
-        }
-        return ItemModel(from: item)
     }
 }
