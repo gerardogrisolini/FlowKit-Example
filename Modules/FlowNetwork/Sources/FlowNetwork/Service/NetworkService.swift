@@ -6,24 +6,17 @@
 //
 
 import Foundation
-import FlowKit
 
-@MainActor public protocol NetworkServiceProtocol {
+//@MainActor
+public protocol NetworkServiceProtocol {
     func getUserInfo() async throws -> UserInfoModel
-    func updateUserInfo(date: Date) async throws
 }
 
 public class NetworkService: NetworkServiceProtocol {
-    @LazyInjected var flowNetwork: FlowNetworkProtocol
-
-    public init() { }
+    var repository: NetworkRepositoryProtocol = NetworkRepository()
 
     public func getUserInfo() async throws -> UserInfoModel {
-        let dto = try await flowNetwork.exampleRepository.getUserInfo()
+        let dto = try await repository.getUserInfo()
         return UserInfoModel(from: dto)
-    }
-
-    public func updateUserInfo(date: Date) async throws {
-        try await flowNetwork.exampleRepository.updateUserInfo(date: date)
     }
 }

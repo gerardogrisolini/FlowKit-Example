@@ -19,7 +19,7 @@ public struct UserInfoModel: Sendable {
 }
 
 extension UserInfoModel {
-    init(from dto: ExampleRepository.UserInfoDTO) {
+    init(from dto: NetworkRepository.UserInfoDTO) {
         id = dto.id
         isAdmin = dto.isAdmin
         date = dto.date

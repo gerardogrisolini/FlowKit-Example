@@ -2,62 +2,69 @@
 //  ContentView.swift
 //  FlowApp
 //
-//  Created by Gerardo Grisolini on 09/01/24.
+//  Created by Gerardo Grisolini on 28/10/24.
 //
 
 import SwiftUI
+import SwiftData
 import FlowShared
 
 @FlowView(InOutEmpty.self)
 public struct ContentView: View, FlowViewProtocol {
+
     @FlowCases
     public enum Out: FlowOutProtocol {
-        case example(InOutModel)
-        case exampleUIKit
+        case swiftUI
+        case uiKit
+        case data
+        case item(ItemModel)
     }
 
+    public enum Event: FlowEventProtocol {
+        case fetch
+    }
+
+    @Bindable var viewModel = ContentViewModel()
+
     public var body: some View {
-        ZStack {
-            LinearGradient(Color.darkStart, Color.darkEnd)
-
-            VStack(spacing: 48) {
-                Image(systemName: "tortoise")
-                    .foregroundColor(.offWhite)
-                    .imageScale(.large)
-                Text("FlowApp").font(.title)
-                    .foregroundColor(.offWhite)
-                    .fontWeight(.ultraLight)
-
-                Spacer()
-
-                Button(action: { out(.example(InOutModel())) }) {
-                    VStack(spacing: 4) {
-                        Text("SwiftUI").font(.caption2)
-                        Image(systemName: "list.bullet.rectangle")
-                    }
-                    .foregroundColor(.offWhite)
-                    .frame(maxWidth: .infinity)
-                }
-                .buttonStyle(DarkButtonStyle())
-
-                Button(action: { out(.exampleUIKit) }) {
-                    VStack(spacing: 4) {
-                        Text("UIKit").font(.caption2)
-                        Image(systemName: "lines.measurement.horizontal")
-                    }
-                    .foregroundColor(.offWhite)
-                    .frame(maxWidth: .infinity)
-                }
-                .buttonStyle(DarkButtonStyle())
-
-                Spacer()
+        ZStack(alignment: .bottom) {
+            TabView(selection: $viewModel.selectedTab) {
+                SwiftUIWidget()
+                    .widget(on: self)
+                    .tag(TabbedItems.swiftUI)
+                UIKitWidget()
+                    .widget(on: self)
+                    .tag(TabbedItems.uiKit)
+                DataWidget(model: $viewModel.item)
+                    .widget(on: self)
+                    .tag(TabbedItems.data)
             }
-            .padding(EdgeInsets(top: 80, leading: 0, bottom: 0, trailing: 0))
+            .tabViewStyle(.tabBarOnly)
+
+            ZStack {
+                HStack{
+                    ForEach((TabbedItems.allCases), id: \.self) { item in
+                        Button {
+                            viewModel.selectedTab = item
+                        } label: {
+                            TabItem(title: item.title, imageName: item.iconName, isActive: (viewModel.selectedTab == item))
+                        }
+                        .buttonStyle(.plain)
+                    }
+                }
+                .padding(6)
+            }
+            .frame(height: 60)
+            .background(.green.opacity(0.2))
+            .cornerRadius(30)
         }
-#if os(iOS)
-        .navigationBarHidden(false)
-#endif
-        .edgesIgnoringSafeArea(.all)
+        .navigationTitle("FlowApp")
+    }
+
+    public func onEventChanged(event: Event, model: some InOutProtocol) async {
+        print("onEventChanged: \(event) -> \(model)")
+        guard case .fetch = event, let m = model as? ItemModel else { return }
+        viewModel.item = m
     }
 
     public func onCommit(model: some InOutProtocol) async {
@@ -65,6 +72,13 @@ public struct ContentView: View, FlowViewProtocol {
     }
 }
 
-#Preview {
+@Observable
+class ContentViewModel {
+    var selectedTab: TabbedItems = .swiftUI
+    var item: ItemModel = .init()
+}
+
+#Preview(traits: .navEmbedded) {
     ContentView()
+        .preview()
 }

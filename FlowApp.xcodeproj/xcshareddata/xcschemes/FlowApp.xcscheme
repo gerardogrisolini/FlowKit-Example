@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1520"
+   LastUpgradeVersion = "1610"
    version = "1.7">
    <BuildAction
       parallelizeBuildables = "YES"
-      buildImplicitDependencies = "YES">
+      buildImplicitDependencies = "YES"
+      buildArchitectures = "Automatic">
       <BuildActionEntries>
          <BuildActionEntry
             buildForTesting = "YES"
@@ -14,7 +15,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "568875F32B4DE3B20024465A"
+               BlueprintIdentifier = "56448FE72CCFF757003435D0"
                BuildableName = "FlowApp.app"
                BlueprintName = "FlowApp"
                ReferencedContainer = "container:FlowApp.xcodeproj">
@@ -26,8 +27,37 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES"
-      shouldAutocreateTestPlan = "YES">
+      shouldUseLaunchSchemeArgsEnv = "YES">
+      <TestPlans>
+         <TestPlanReference
+            reference = "container:FlowApp.xctestplan"
+            default = "YES">
+         </TestPlanReference>
+      </TestPlans>
+      <Testables>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "56448FFA2CCFF758003435D0"
+               BuildableName = "FlowAppTests.xctest"
+               BlueprintName = "FlowAppTests"
+               ReferencedContainer = "container:FlowApp.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "564490042CCFF758003435D0"
+               BuildableName = "FlowAppUITests.xctest"
+               BlueprintName = "FlowAppUITests"
+               ReferencedContainer = "container:FlowApp.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+      </Testables>
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"
@@ -43,7 +73,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "568875F32B4DE3B20024465A"
+            BlueprintIdentifier = "56448FE72CCFF757003435D0"
             BuildableName = "FlowApp.app"
             BlueprintName = "FlowApp"
             ReferencedContainer = "container:FlowApp.xcodeproj">
@@ -60,7 +90,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "568875F32B4DE3B20024465A"
+            BlueprintIdentifier = "56448FE72CCFF757003435D0"
             BuildableName = "FlowApp.app"
             BlueprintName = "FlowApp"
             ReferencedContainer = "container:FlowApp.xcodeproj">

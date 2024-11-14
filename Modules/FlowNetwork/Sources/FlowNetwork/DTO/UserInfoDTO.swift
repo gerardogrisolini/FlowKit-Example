@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension ExampleRepository {
+extension NetworkRepository {
     public struct UserInfoDTO: Codable, Sendable {
         let id: Int
         let isAdmin: Bool

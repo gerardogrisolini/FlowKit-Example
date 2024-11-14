@@ -5,25 +5,20 @@ import PackageDescription
 
 let package = Package(
     name: "FlowNetwork",
-	platforms: [.iOS(.v17), .macOS(.v14)],
+    platforms: [.iOS(.v18)],
     products: [
         .library(
             name: "FlowNetwork",
-            targets: ["FlowNetwork"]
-		)
-    ],
-	dependencies: [
-        .package(url: "https://github.com/gerardogrisolini/FlowKit.git", from: "2.0.0")
+            targets: ["FlowNetwork"]),
     ],
     targets: [
         .target(
-            name: "FlowNetwork",
-			dependencies: ["FlowKit"]
-		),
+            name: "FlowNetwork"
+        ),
         .testTarget(
             name: "FlowNetworkTests",
             dependencies: ["FlowNetwork"]
-		)
+        ),
     ],
     swiftLanguageModes: [.v6]
 )

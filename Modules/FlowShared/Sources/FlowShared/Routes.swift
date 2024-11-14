@@ -1,8 +1,8 @@
 //
 //  Routes.swift
-//  
+//  Shared
 //
-//  Created by Gerardo Grisolini on 29/01/23.
+//  Created by Gerardo Grisolini on 18/09/24.
 //
 
 import FlowKit
@@ -10,7 +10,8 @@ import FlowKit
 @FlowCases
 public enum Routes: Routable  {
     case home
-    case example(InOutModel)
-    case exampleLite
-    case exampleUIKit
+    case swiftUI
+    case uiKit
+    case data
+    case item(ItemModel)
 }
