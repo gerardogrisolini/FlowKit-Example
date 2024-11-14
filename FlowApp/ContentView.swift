@@ -17,7 +17,6 @@ public struct ContentView: View, FlowViewProtocol {
         case swiftUI
         case uiKit
         case data
-        case item(ItemModel)
     }
 
     public enum Event: FlowEventProtocol {

@@ -19,7 +19,6 @@ public final class AppFlow: FlowProtocol {
         $0.swiftUI ~ Routes.swiftUI
         $0.uiKit ~ Routes.uiKit
         $0.data ~ Routes.data
-        $0.item ~ Routes.item
     }
 
     public var behavior: FlowBehavior {

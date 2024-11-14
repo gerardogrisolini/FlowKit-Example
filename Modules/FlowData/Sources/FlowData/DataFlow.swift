@@ -13,8 +13,3 @@ public final class DataFlow: FlowProtocol {
         $0.detail ~ DataDetail.node
     }
 }
-
-//@Flow(ItemModel.self, route: Routes.item(ItemModel()))
-//public final class DataItemFlow: FlowProtocol {
-//    public let node = DataDetail.node
-//}

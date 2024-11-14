@@ -14,7 +14,6 @@ struct DataWidget: View, FlowWidgetProtocol {
     @FlowCases
     public enum Out: FlowOutProtocol {
         case data
-        case item(ItemModel)
     }
     public enum Event: FlowEventProtocol {
         case fetch
@@ -27,14 +26,9 @@ struct DataWidget: View, FlowWidgetProtocol {
             Button("Items") { out(.data) }
                 .buttonStyle(.plain)
                 .typesettingLanguage(.init(languageCode: .english))
-
             Button("Fetch last item") { event(.fetch) }.buttonStyle(.plain)
-            Button {
-                out(.item(model))
-            } label: {
-                Text(model.serialNumber)
-            }
-            .buttonStyle(.plain)
+            Text(model.serialNumber)
+                .bold()
         }
         .padding()
         .background(Color.white.cornerRadius(20).opacity(0.1))
