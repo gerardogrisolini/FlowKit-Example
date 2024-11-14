@@ -25,7 +25,6 @@ struct FlowApp: App {
     }()
 
     init () {
-        sharedModelContainer.mainContext.processPendingChanges()
         FlowKit.initialize()
         FlowKit.register(scope: .application) { [sharedModelContainer] in
             sharedModelContainer as ModelContainer
