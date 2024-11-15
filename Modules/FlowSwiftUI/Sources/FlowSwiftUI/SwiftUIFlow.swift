@@ -7,7 +7,7 @@
 
 import FlowShared
 
-@Flow(InOutEmpty.self, route: Routes.swiftUI)
+@Flow(InOutModel.self, route: Routes.swiftUI(InOutModel()))
 public final class SwiftUIFlow: FlowProtocol {
 
     public let node = SwiftUIView1.node {

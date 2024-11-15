@@ -10,8 +10,7 @@ import FlowKit
 @FlowCases
 public enum Routes: Routable  {
     case home
-    case swiftUI
-    case uiKit
+    case swiftUI(InOutModel)
+    case uiKit(InOutModel)
     case data
-    case item(ItemModel)
 }

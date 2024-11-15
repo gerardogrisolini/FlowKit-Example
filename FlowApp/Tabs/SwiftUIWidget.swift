@@ -11,13 +11,18 @@ import FlowShared
 struct SwiftUIWidget: View, FlowWidgetProtocol {
     @Environment(\.parent) var parent
 
+    @FlowCases
     enum Out: FlowOutProtocol {
-        case swiftUI
+        case swiftUI(InOutModel)
     }
 
     var body: some View {
         VStack(spacing: 20) {
-            Button("SwiftUI") { out(.swiftUI) }.buttonStyle(.plain)
+            Button("SwiftUI") {
+                let model = InOutModel(info: "SwiftUI")
+                out(.swiftUI(model))
+            }
+            .buttonStyle(.plain)
         }
         .padding()
         .background(Color.white.cornerRadius(20).opacity(0.1))

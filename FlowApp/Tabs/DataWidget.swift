@@ -11,7 +11,6 @@ import FlowShared
 struct DataWidget: View, FlowWidgetProtocol {
     @Environment(\.parent) var parent
 
-    @FlowCases
     public enum Out: FlowOutProtocol {
         case data
     }

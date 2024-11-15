@@ -8,21 +8,20 @@
 import SwiftUI
 import FlowShared
 
-@FlowView(InOutEmpty.self)
+@FlowView(InOutModel.self)
 public struct SwiftUIView1: View, FlowViewProtocol {
     public enum Out: FlowOutProtocol {
         case page2
     }
 
     public var body: some View {
-        VStack {
+        VStack(spacing: 20) {
             Button(FlowSharedKeys.page2.localized) {
                 out(.page2)
             }
             .buttonStyle(.plain)
+            Text(model.info)
         }
-        .padding()
-        .background(Color.white.cornerRadius(20).opacity(0.1))
         .navigationTitle(FlowSharedKeys.page1.localized)
         .backgroundShared()
     }

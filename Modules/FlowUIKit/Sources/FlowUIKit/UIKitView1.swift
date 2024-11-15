@@ -8,20 +8,27 @@
 import UIKit
 import FlowShared
 
-@FlowView(InOutEmpty.self, init: false)
+@FlowView(InOutModel.self, init: false)
 public final class UIKitView1: UIKitBaseView, FlowViewProtocol {
     public enum Out: FlowOutProtocol {
         case page2
     }
 
-    public init(model: InOutEmpty = InOutEmpty()) {
+    @IBOutlet weak var framework: UILabel!
+
+    public init(model: InOutModel = InOutModel()) {
         self.model = model
         super.init(nibName: "UIKitView1", bundle: .module)
-		title = "Page 1"
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+
+    public override func viewDidLoad() {
+        super.viewDidLoad()
+        title = "Page 1"
+        framework.text = model.info
     }
 
     @IBAction func navigateToPage2(_ sender: Any) {

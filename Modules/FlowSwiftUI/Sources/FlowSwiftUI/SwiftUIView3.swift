@@ -17,14 +17,12 @@ struct SwiftUIView3: View, FlowViewProtocol {
             }
             .buttonStyle(.plain)
         }
-        .padding()
-        .background(Color.white.cornerRadius(20).opacity(0.1))
         .navigationTitle(FlowSharedKeys.page3.localized)
         .backgroundShared()
     }
 
     func commit() {
-        let callBack = { commit(model) }
+        let callBack = { commit(InOutModel(info: "Committed information")) }
         present(CommitView(callBack: callBack))
     }
 }

@@ -65,23 +65,8 @@ public extension ItemModel {
     }
 }
 
-//extension ModelContext {
-//    public func get(id: UUID) -> Item? {
-//        do {
-//            let predicate = #Predicate<Item> { object in
-//                object.id == id
-//            }
-//            var descriptor = FetchDescriptor<Item>(predicate: predicate)
-//            descriptor.fetchLimit = 1
-//            return try fetch(descriptor).first
-//        } catch {
-//            return nil
-//        }
-//    }
-//}
-
 @ModelActor
-public actor ItemActor: Sendable {
+public actor ItemActor {
     private var context: ModelContext { modelExecutor.modelContext }
 
     public func insert(_ model: ItemModel) async {
@@ -90,7 +75,6 @@ public actor ItemActor: Sendable {
     }
 
     public func updateOrInsert(_ model: ItemModel) async {
-        //if let item: Item = modelContext.registeredModel(for: model.persistentModelID) {
         guard let item = get(id: model.id) else {
             return await insert(model)
         }

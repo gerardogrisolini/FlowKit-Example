@@ -14,8 +14,8 @@ public struct ContentView: View, FlowViewProtocol {
 
     @FlowCases
     public enum Out: FlowOutProtocol {
-        case swiftUI
-        case uiKit
+        case swiftUI(InOutModel)
+        case uiKit(InOutModel)
         case data
     }
 
@@ -67,7 +67,7 @@ public struct ContentView: View, FlowViewProtocol {
     }
 
     public func onCommit(model: some InOutProtocol) async {
-        print("onCommit: \(model)")
+        print("onCommit: \((model as? InOutModel)?.info ?? "")")
     }
 }
 

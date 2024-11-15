@@ -34,8 +34,6 @@ struct SwiftUIView2: View, FlowViewProtocol {
                 Text(date.formatted(.iso8601))
             }
         }
-        .padding()
-        .background(Color.white.cornerRadius(20).opacity(0.1))
         .navigationTitle(FlowSharedKeys.page2.localized)
         .backgroundShared()
     }
