@@ -7,7 +7,7 @@
 
 import FlowShared
 
-@Flow(InOutEmpty.self, route: Routes.uiKit(InOutModel()))
+@Flow(InOutModel.self, route: Routes.uiKit(InOutModel()))
 public final class UIKitFlow: FlowProtocol {
     public let node = UIKitView1.node {
         $0.page2 ~ UIKitView2.node {

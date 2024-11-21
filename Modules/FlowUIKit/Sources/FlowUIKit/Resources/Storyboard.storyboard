@@ -34,6 +34,65 @@
             </objects>
             <point key="canvasLocation" x="139.69465648854961" y="3.5211267605633805"/>
         </scene>
+        <!--Commit View-->
+        <scene sceneID="v5L-Hm-ELg">
+            <objects>
+                <viewController storyboardIdentifier="CommitView" id="ehl-La-fre" customClass="CommitView" customModule="FlowUIKit" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="M2X-Nd-Oba">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Commit closes the flow and sends the model to the page that started it." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vTE-Ko-D4u">
+                                <rect key="frame" x="50" y="159" width="293" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="xeM-rC-BkT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wvi-M1-B43">
+                                <rect key="frame" x="80" y="748" width="100" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="TxU-wK-bLU"/>
+                                    <constraint firstAttribute="width" constant="100" id="q19-ch-afO"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Cancel"/>
+                                <connections>
+                                    <action selector="cancelAction:" destination="ehl-La-fre" eventType="touchUpInside" id="nFr-4g-Ofb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MEv-g9-hfg">
+                                <rect key="frame" x="213" y="748" width="100" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="1gu-3o-hxF"/>
+                                    <constraint firstAttribute="width" constant="100" id="5jj-Jc-QHL"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Commit"/>
+                                <connections>
+                                    <action selector="commitAction:" destination="ehl-La-fre" eventType="touchUpInside" id="18Y-ch-1jj"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="FaW-pg-IN2"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="FaW-pg-IN2" firstAttribute="bottom" secondItem="MEv-g9-hfg" secondAttribute="bottom" constant="35" id="2yq-oZ-KP6"/>
+                            <constraint firstItem="FaW-pg-IN2" firstAttribute="trailing" secondItem="MEv-g9-hfg" secondAttribute="trailing" constant="80" id="Xmf-KJ-fSh"/>
+                            <constraint firstItem="FaW-pg-IN2" firstAttribute="bottom" secondItem="wvi-M1-B43" secondAttribute="bottom" constant="35" id="c1h-vE-SRK"/>
+                            <constraint firstItem="FaW-pg-IN2" firstAttribute="trailing" secondItem="vTE-Ko-D4u" secondAttribute="trailing" constant="50" id="nE5-Wa-9Bi"/>
+                            <constraint firstItem="vTE-Ko-D4u" firstAttribute="top" secondItem="FaW-pg-IN2" secondAttribute="top" constant="100" id="tGw-dB-nlD"/>
+                            <constraint firstItem="wvi-M1-B43" firstAttribute="leading" secondItem="FaW-pg-IN2" secondAttribute="leading" constant="80" id="vrS-yY-FiF"/>
+                            <constraint firstItem="vTE-Ko-D4u" firstAttribute="leading" secondItem="FaW-pg-IN2" secondAttribute="leading" constant="50" id="yay-7H-rok"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="j2h-pY-6QA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1049.6183206106871" y="3.5211267605633805"/>
+        </scene>
     </scenes>
     <resources>
         <systemColor name="systemBackgroundColor">

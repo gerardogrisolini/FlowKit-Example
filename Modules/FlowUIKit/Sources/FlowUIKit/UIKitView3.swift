@@ -30,6 +30,41 @@ final class UIKitView3: UIKitBaseView, FlowViewProtocol {
     }
     
     @IBAction func commitAction(_ sender: Any) {
-        commit(model)
+        let callBack = { [weak self] in
+            self?.commit(InOutModel(info: "Committed information from UIKit")) ?? ()
+        }
+        let view = CommitView.factory(callBack: callBack)
+        present(.sheet(view))
     }
 }
+
+final class CommitView: UIViewController {
+    let callBack: () -> Void
+
+    init?(coder: NSCoder, callBack: @escaping () -> Void) {
+        self.callBack = callBack
+        super.init(coder: coder)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+    static func factory(callBack: @escaping () -> Void) -> Self {
+        let storyboard = UIStoryboard(name: "Storyboard", bundle: .module)
+        let vc = storyboard.instantiateViewController(identifier: "CommitView") { coder in
+            CommitView(coder: coder, callBack: callBack)
+        }
+        return vc as! Self
+    }
+
+    @IBAction func cancelAction(_ sender: Any) {
+        dismiss(animated: true)
+    }
+
+    @IBAction func commitAction(_ sender: Any) {
+        dismiss(animated: true)
+        callBack()
+    }
+}
+

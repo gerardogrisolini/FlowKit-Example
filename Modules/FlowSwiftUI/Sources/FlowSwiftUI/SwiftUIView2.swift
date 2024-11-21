@@ -22,7 +22,6 @@ struct SwiftUIView2: View, FlowViewProtocol {
             Button(FlowSharedKeys.page3.localized) {
                 out(.page3)
             }
-            .buttonStyle(.plain)
 
             Button(FlowSharedKeys.fetch.localized) {
                 Task { [viewModel] in

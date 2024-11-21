@@ -15,19 +15,21 @@ struct SwiftUIView3: View, FlowViewProtocol {
             Button(FlowSharedKeys.commit.localized) {
                 commit()
             }
-            .buttonStyle(.plain)
         }
         .navigationTitle(FlowSharedKeys.page3.localized)
         .backgroundShared()
     }
 
     func commit() {
-        let callBack = { commit(InOutModel(info: "Committed information")) }
-        present(CommitView(callBack: callBack))
+        let callBack = { commit(InOutModel(info: "Committed information from SwiftUI")) }
+        let view = CommitView(callBack: callBack)
+        present(.sheet(view))
     }
 }
 
-struct CommitView: View, Presentable {
+struct CommitView: View {
+//    @Environment(\.dismiss) var dismiss
+//    @Environment(\.presentationMode) var presentationMode
     let callBack: () -> Void
 
     var body: some View {
@@ -36,11 +38,13 @@ struct CommitView: View, Presentable {
             Spacer()
             HStack(spacing: 50) {
                 Button(FlowSharedKeys.cancel.localized) {
+//                    presentationMode.wrappedValue.dismiss()
                     dismiss()
                 }
                 Button(FlowSharedKeys.commit.localized) {
-                    dismiss()
                     callBack()
+//                    dismiss.callAsFunction()
+                    dismiss()
                 }
             }
         }

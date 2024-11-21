@@ -19,7 +19,6 @@ public struct SwiftUIView1: View, FlowViewProtocol {
             Button(FlowSharedKeys.page2.localized) {
                 out(.page2)
             }
-            .buttonStyle(.plain)
             Text(model.info)
         }
         .navigationTitle(FlowSharedKeys.page1.localized)
