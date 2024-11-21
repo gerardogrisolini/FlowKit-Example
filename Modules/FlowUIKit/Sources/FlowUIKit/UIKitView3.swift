@@ -63,8 +63,8 @@ final class CommitView: UIViewController {
     }
 
     @IBAction func commitAction(_ sender: Any) {
-        dismiss(animated: true)
         callBack()
+        dismiss(animated: true)
     }
 }
 

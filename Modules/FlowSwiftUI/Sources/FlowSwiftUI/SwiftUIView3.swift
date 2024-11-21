@@ -28,8 +28,6 @@ struct SwiftUIView3: View, FlowViewProtocol {
 }
 
 struct CommitView: View {
-//    @Environment(\.dismiss) var dismiss
-//    @Environment(\.presentationMode) var presentationMode
     let callBack: () -> Void
 
     var body: some View {
@@ -38,12 +36,10 @@ struct CommitView: View {
             Spacer()
             HStack(spacing: 50) {
                 Button(FlowSharedKeys.cancel.localized) {
-//                    presentationMode.wrappedValue.dismiss()
                     dismiss()
                 }
                 Button(FlowSharedKeys.commit.localized) {
                     callBack()
-//                    dismiss.callAsFunction()
                     dismiss()
                 }
             }
