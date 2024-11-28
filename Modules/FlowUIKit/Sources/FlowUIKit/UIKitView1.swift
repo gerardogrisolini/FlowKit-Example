@@ -16,9 +16,10 @@ public final class UIKitView1: UIKitBaseView, FlowViewProtocol {
 
     @IBOutlet weak var framework: UILabel!
 
-    public init(model: InOutModel = InOutModel()) {
+    required public init(model: InOutModel = InOutModel()) {
         self.model = model
         super.init(nibName: "UIKitView1", bundle: .module)
+        title = "Page 1"
     }
     
     required init?(coder: NSCoder) {
@@ -27,7 +28,6 @@ public final class UIKitView1: UIKitBaseView, FlowViewProtocol {
 
     public override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Page 1"
         framework.text = model.info
     }
 
