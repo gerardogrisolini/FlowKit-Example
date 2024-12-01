@@ -29,6 +29,7 @@ struct SwiftUIView2: View, FlowViewProtocol {
                 }
             }
             .buttonStyle(.plain)
+
             if let date = viewModel.data?.date {
                 Text(date.formatted(.iso8601))
             }
@@ -40,17 +41,18 @@ struct SwiftUIView2: View, FlowViewProtocol {
 
 @Observable
 final class SwiftUIViewModel {
-    let network: FlowNetworkProtocol = Resolver.resolve()
     var data: UserInfoModel? = nil
+    let service: NetworkServiceProtocol
+
+    init(service: NetworkServiceProtocol = InjectedValues[\.network]) {
+        self.service = service
+    }
 
     func fetchData() async throws {
-        data = try await network.networkService.getUserInfo()
+        data = try await service.getUserInfo()
     }
 }
 
 #Preview(traits: .navEmbedded) {
-    FlowKit.register(scope: .graph) {
-        FlowNetwork() as FlowNetworkProtocol
-    }
-    return SwiftUIView2()
+    SwiftUIView2()
 }

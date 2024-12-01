@@ -9,7 +9,7 @@ import UIKit
 import FlowShared
 
 @FlowView(InOutEmpty.self)
-final class UIKitView3: UIKitBaseView, FlowViewProtocol {
+final class UIKitView3: UIViewControllerBase, FlowViewProtocol {
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

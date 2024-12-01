@@ -9,7 +9,7 @@ import UIKit
 import FlowShared
 
 @FlowView(InOutEmpty.self, init: false)
-class UIKitView2: UIKitBaseView, FlowViewProtocol {
+class UIKitView2: UIViewControllerBase, FlowViewProtocol {
     public enum Out: FlowOutProtocol {
         case page3
     }

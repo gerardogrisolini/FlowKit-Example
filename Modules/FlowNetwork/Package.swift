@@ -11,9 +11,13 @@ let package = Package(
             name: "FlowNetwork",
             targets: ["FlowNetwork"]),
     ],
+    dependencies: [
+        .package(path: "../FlowShared")
+    ],
     targets: [
         .target(
-            name: "FlowNetwork"
+            name: "FlowNetwork",
+            dependencies: ["FlowShared"]
         ),
         .testTarget(
             name: "FlowNetworkTests",

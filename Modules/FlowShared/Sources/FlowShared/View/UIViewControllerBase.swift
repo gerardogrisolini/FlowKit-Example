@@ -1,5 +1,5 @@
 //
-//  UIKitBaseView.swift
+//  UIViewControllerBase.swift
 //  FlowShared
 //
 //  Created by Gerardo Grisolini on 11/11/24.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-open class UIKitBaseView: UIViewController {
+open class UIViewControllerBase: UIViewController {
     open override func viewDidLoad() {
         super.viewDidLoad()
 

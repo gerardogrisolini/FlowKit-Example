@@ -1,15 +1,19 @@
 //
 //  FlowNetwork.swift
+//  FlowNetwork
 //
-//
-//  Created by Gerardo Grisolini on 16/12/23.
+//  Created by Gerardo Grisolini on 01/12/24.
 //
 
-public protocol FlowNetworkProtocol {
-    var networkService: NetworkServiceProtocol { get }
+import FlowShared
+
+private struct NetworkServiceKey: @preconcurrency InjectionKey {
+    @MainActor static var currentValue: NetworkServiceProtocol = NetworkService()
 }
 
-public class FlowNetwork: FlowNetworkProtocol {
-    public lazy var networkService: NetworkServiceProtocol = NetworkService()
-    public init() { }
+public extension InjectedValues {
+    var network: NetworkServiceProtocol {
+        get { Self[NetworkServiceKey.self] }
+        set { Self[NetworkServiceKey.self] = newValue }
+    }
 }

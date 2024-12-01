@@ -5,15 +5,11 @@
 //  Created by Gerardo Grisolini on 28/10/24.
 //
 
-import Foundation
 import SwiftData
-import FlowKit
 import FlowShared
 
 @Flow(InOutEmpty.self, route: Routes.home)
 public final class AppFlow: FlowProtocol {
-
-    @MainActor private var context: ModelContainer { Resolver.resolve() }
 
     public let node = ContentView.node {
         $0.swiftUI ~ Routes.swiftUI
@@ -29,10 +25,16 @@ public final class AppFlow: FlowProtocol {
         }
     }
 
+    private let modelContainer: ModelContainer
+
+    public init() {
+        modelContainer = InjectedValues[\.modelContainer]
+    }
+
     private func onEvent(_ event: any FlowEventProtocol) async throws -> any InOutProtocol {
         switch event as! ContentView.Event {
         case .fetch:
-            let itemActor = await ItemActor(modelContainer: context)
+            let itemActor = ItemActor(modelContainer: modelContainer)
             guard let item = try await itemActor.fetchData().last else {
                 throw FlowError.generic
             }

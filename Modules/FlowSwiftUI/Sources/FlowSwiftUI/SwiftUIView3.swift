@@ -28,6 +28,8 @@ struct SwiftUIView3: View, FlowViewProtocol {
 }
 
 struct CommitView: View {
+    @Environment(\.dismiss) var dismiss
+
     let callBack: () -> Void
 
     var body: some View {
