@@ -8,10 +8,14 @@
 import Foundation
 import FlowKit
 
+public protocol Localizable: Hashable, RawRepresentable where RawValue: StringProtocol {
+    var localized: String { get }
+}
+
 public enum FlowSharedKeys: String, Localizable {
     case page1, page2, page3, fetch, cancel, commit, commitInfo
 
     public var localized: String {
-        String(localized: injectedLocalized, bundle: .module)
+        String(localized: "\(rawValue)", bundle: .module)
     }
 }

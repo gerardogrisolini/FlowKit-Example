@@ -17,21 +17,13 @@ public final class AppFlow: FlowProtocol {
         $0.data ~ Routes.data
     }
 
-    public var behavior: FlowBehavior {
-        .init {
-            Events {
-                ContentView.Event.fetch ~ onEvent
-            }
-        }
-    }
-
     private let modelContainer: ModelContainer
 
     public init() {
         modelContainer = InjectedValues[\.modelContainer]
     }
 
-    private func onEvent(_ event: any FlowEventProtocol) async throws -> any InOutProtocol {
+    public func runEvent(_ event: any FlowEventProtocol) async throws -> any InOutProtocol {
         switch event as! ContentView.Event {
         case .fetch:
             let itemActor = ItemActor(modelContainer: modelContainer)
