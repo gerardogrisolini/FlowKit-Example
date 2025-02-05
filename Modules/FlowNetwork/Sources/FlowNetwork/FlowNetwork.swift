@@ -7,13 +7,13 @@
 
 import FlowShared
 
-private struct NetworkServiceKey: @preconcurrency InjectionKey {
+private struct NetworkServiceProvider: @preconcurrency InjectionProvider {
     @MainActor static var currentValue: NetworkServiceProtocol = NetworkService()
 }
 
 public extension InjectedValues {
     var network: NetworkServiceProtocol {
-        get { Self[NetworkServiceKey.self] }
-        set { Self[NetworkServiceKey.self] = newValue }
+        get { Self[NetworkServiceProvider.self] }
+        set { Self[NetworkServiceProvider.self] = newValue }
     }
 }

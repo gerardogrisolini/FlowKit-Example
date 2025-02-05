@@ -8,7 +8,7 @@
 @_exported import FlowKit
 import SwiftData
 
-private struct ModelContainerKey: @preconcurrency InjectionKey {
+private struct ModelContainerProvider: @preconcurrency InjectionProvider {
 
     static let modelContainer: ModelContainer = {
         let schema = Schema([
@@ -28,7 +28,7 @@ private struct ModelContainerKey: @preconcurrency InjectionKey {
 public extension InjectedValues {
 
     var modelContainer: ModelContainer {
-        get { Self[ModelContainerKey.self] }
-        set { Self[ModelContainerKey.self] = newValue }
+        get { Self[ModelContainerProvider.self] }
+        set { Self[ModelContainerProvider.self] = newValue }
     }
 }

@@ -105,7 +105,7 @@ public struct SwiftUIView1: View, FlowViewProtocol {
 //        section.boundarySupplementaryItems = [headerItem]
 
 //        section.orthogonalScrollingBehavior = .groupPaging
-
+//
 //        section.visibleItemsInvalidationHandler = { (items, offset, environment) in
 //            items.forEach { item in
 //                let distanceFromCenter = abs((item.frame.midX - offset.x) - environment.container.contentSize.width / 2.0)
@@ -121,13 +121,11 @@ public struct SwiftUIView1: View, FlowViewProtocol {
 }
 
 fileprivate struct SheetView: View {
-    //@Injected(\.navigation) var navigation
     @Environment(\.dismiss) var dismiss
 
     let value: Int
     var body: some View {
         Button(value.description, action: { dismiss() })
-        //Button("Go to", action: { navigation.navigate(view: <#T##any Sendable#>) })
     }
 }
 
