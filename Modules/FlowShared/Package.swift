@@ -7,13 +7,13 @@ let package = Package(
     name: "FlowShared",
     defaultLocalization: "en",
     platforms: [.iOS(.v18)],
-     products: [
+    products: [
         .library(
             name: "FlowShared",
             targets: ["FlowShared"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/gerardogrisolini/FlowKit.git", from: "2.4.0")
+        .package(url: "https://github.com/gerardogrisolini/FlowKit.git", from: "2.4.1")
     ],
     targets: [
         .target(

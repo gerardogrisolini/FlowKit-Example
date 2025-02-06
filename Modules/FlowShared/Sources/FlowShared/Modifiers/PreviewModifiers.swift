@@ -13,7 +13,7 @@ public struct NavEmbedded: PreviewModifier {
         FlowKit.initialize(withFlowRouting: false)
     }
     public func body(content: Content, context: Void) -> some View {
-        content.swiftUINavigation()
+        content.navigationKit()
     }
 }
 
