@@ -27,7 +27,6 @@
 /* Begin PBXFileReference section */
 		56448FE82CCFF757003435D0 /* FlowApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlowApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56448FFB2CCFF758003435D0 /* FlowAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlowAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		56C82BC42CE26DC40002F576 /* FlowApp.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = FlowApp.xctestplan; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -113,7 +112,6 @@
 		56448FDF2CCFF757003435D0 = {
 			isa = PBXGroup;
 			children = (
-				56C82BC42CE26DC40002F576 /* FlowApp.xctestplan */,
 				564490182CCFF843003435D0 /* Modules */,
 				56448FEA2CCFF757003435D0 /* FlowApp */,
 				56448FFE2CCFF758003435D0 /* FlowAppTests */,
