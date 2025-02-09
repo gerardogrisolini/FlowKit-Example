@@ -6,12 +6,13 @@
 //
 
 import UIKit
+import FlowKit
 
 open class UIViewControllerBase: UIViewController {
     open override func viewDidLoad() {
         super.viewDidLoad()
 
-        let background = AnimatedColorsMeshGradientView().toUIKit()
+        let background = AnimatedColorsMeshGradientView().toUIView()
         view.insertSubview(background, at: 0)
         background.translatesAutoresizingMaskIntoConstraints = false
         background.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
@@ -20,3 +21,13 @@ open class UIViewControllerBase: UIViewController {
         background.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
     }
 }
+
+#if canImport(UIKit)
+import SwiftUI
+
+public extension View {
+    func toUIView() -> UIView {
+        UIHostingController(rootView: self).view!
+    }
+}
+#endif
