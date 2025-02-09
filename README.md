@@ -1,13 +1,12 @@
-# FlowKit framework
+# FlowKit example
 
 Learn how to use a FlowKit framework in your app.
 
 ## Overview
 
-
-## Tutorial
-
-[View a tutorial on this sample.]
+There are two examples:
+1) FlowApp is an example of a modular FlowKit app with flows
+2) NavigationApp is an example of a modular NavigationKit app without flows
 
 ## Running the Sample Code Project
 
