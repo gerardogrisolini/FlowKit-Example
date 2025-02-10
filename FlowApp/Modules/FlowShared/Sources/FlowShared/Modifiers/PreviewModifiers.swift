@@ -9,9 +9,6 @@ import SwiftUI
 import SwiftData
 
 public struct NavEmbedded: PreviewModifier {
-    init() {
-        FlowKit.initialize(withFlowRouting: false)
-    }
     public func body(content: Content, context: Void) -> some View {
         content.navigationKit()
     }

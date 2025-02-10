@@ -27,13 +27,8 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES">
-      <TestPlans>
-         <TestPlanReference
-            reference = "container:FlowApp.xctestplan"
-            default = "YES">
-         </TestPlanReference>
-      </TestPlans>
+      shouldUseLaunchSchemeArgsEnv = "YES"
+      shouldAutocreateTestPlan = "YES">
       <Testables>
          <TestableReference
             skipped = "NO"
@@ -43,17 +38,6 @@
                BlueprintIdentifier = "56448FFA2CCFF758003435D0"
                BuildableName = "FlowAppTests.xctest"
                BlueprintName = "FlowAppTests"
-               ReferencedContainer = "container:FlowApp.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO"
-            parallelizable = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "564490042CCFF758003435D0"
-               BuildableName = "FlowAppUITests.xctest"
-               BlueprintName = "FlowAppUITests"
                ReferencedContainer = "container:FlowApp.xcodeproj">
             </BuildableReference>
          </TestableReference>

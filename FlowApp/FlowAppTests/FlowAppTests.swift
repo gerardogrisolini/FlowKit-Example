@@ -6,10 +6,11 @@
 //
 
 import Testing
+@testable import FlowApp
 
 struct FlowAppTests {
 
-    @Test func appFlow() async throws {
+    @Test @MainActor func appFlow() async throws {
         try await AppFlow().test()
     }
 
