@@ -13,7 +13,7 @@ let package = Package(
             targets: ["FlowShared"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/gerardogrisolini/FlowKit.git", from: "2.5.3")
+        .package(url: "https://github.com/gerardogrisolini/FlowKit.git", from: "2.5.4")
     ],
     targets: [
         .target(

@@ -8,11 +8,17 @@
 import SwiftUI
 import Shared
 
-public struct Module3TwoView: View {
+struct Module3TwoView: View {
     @Injected(\.router) var router
 
-    public var body: some View {
+    let model: InOutModel
+    init(model: InOutModel = .init()) {
+        self.model = model
+    }
+
+    var body: some View {
         VStack(spacing: 32) {
+            Text(model.value).font(.headline)
             Button("PopToRoot") {
                 router.popToRoot()
             }

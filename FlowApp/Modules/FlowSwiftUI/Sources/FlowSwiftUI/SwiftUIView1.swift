@@ -30,11 +30,13 @@ public struct SwiftUIView1: View, FlowViewProtocol {
                             .clipShape(Rectangle())
                     }
                 }
+                .listRowBackground(Color.white.opacity(0.1))
             }
+            .scrollContentBackground(.hidden)
             .listStyle(.grouped)
             .uiKit { view in
                 if let v = view as? UICollectionView {
-                    v.collectionViewLayout = compositionalLayout2
+                    v.collectionViewLayout = compositionalLayout
                 }
             }
         }
@@ -59,63 +61,19 @@ public struct SwiftUIView1: View, FlowViewProtocol {
         }
     }
 
-//    let compositionalLayout1: UICollectionViewCompositionalLayout = {
-//        let fraction: CGFloat = 1 / 3
-//
-//        // Item
-//        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(fraction), heightDimension: .fractionalHeight(1))
-//        let item = NSCollectionLayoutItem(layoutSize: itemSize)
-//
-//        // Group
-//        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalWidth(fraction))
-//        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
-//
-//        // Section
-//        let section = NSCollectionLayoutSection(group: group)
-//        return UICollectionViewCompositionalLayout(section: section)
-//    }()
+    let compositionalLayout: UICollectionViewCompositionalLayout = {
+        let fraction: CGFloat = 1 / 3
 
-    let compositionalLayout2: UICollectionViewCompositionalLayout = {
-        let inset: CGFloat = 2.5
+        // Item
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(fraction), heightDimension: .fractionalHeight(1))
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
 
-        // Items
-        let largeItemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.5), heightDimension: .fractionalHeight(1))
-        let largeItem = NSCollectionLayoutItem(layoutSize: largeItemSize)
-        largeItem.contentInsets = NSDirectionalEdgeInsets(top: inset, leading: inset, bottom: inset, trailing: inset)
-
-        let smallItemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(0.5))
-        let smallItem = NSCollectionLayoutItem(layoutSize: smallItemSize)
-        smallItem.contentInsets = NSDirectionalEdgeInsets(top: inset, leading: inset, bottom: inset, trailing: inset)
-
-        // Nested Group
-        let nestedGroupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.25), heightDimension: .fractionalHeight(1))
-        let nestedGroup = NSCollectionLayoutGroup.vertical(layoutSize: nestedGroupSize, subitems: [smallItem])
-
-        // Outer Group
-        let outerGroupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalWidth(0.5))
-        let outerGroup = NSCollectionLayoutGroup.horizontal(layoutSize: outerGroupSize, subitems: [largeItem, nestedGroup, nestedGroup])
+        // Group
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalWidth(fraction))
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
 
         // Section
-        let section = NSCollectionLayoutSection(group: outerGroup)
-        section.contentInsets = NSDirectionalEdgeInsets(top: inset, leading: inset, bottom: inset, trailing: inset)
-
-        // Supplementary Item
-//        let headerItemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(100))
-//        let headerItem = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerItemSize, elementKind: UICollectionView.elementKindSectionHeader, alignment: .top)
-//        section.boundarySupplementaryItems = [headerItem]
-
-//        section.orthogonalScrollingBehavior = .groupPaging
-//
-//        section.visibleItemsInvalidationHandler = { (items, offset, environment) in
-//            items.forEach { item in
-//                let distanceFromCenter = abs((item.frame.midX - offset.x) - environment.container.contentSize.width / 2.0)
-//                let minScale: CGFloat = 0.7
-//                let maxScale: CGFloat = 1.1
-//                let scale = max(maxScale - (distanceFromCenter / environment.container.contentSize.width), minScale)
-//                item.transform = CGAffineTransform(scaleX: scale, y: scale)
-//            }
-//        }
-
+        let section = NSCollectionLayoutSection(group: group)
         return UICollectionViewCompositionalLayout(section: section)
     }()
 }

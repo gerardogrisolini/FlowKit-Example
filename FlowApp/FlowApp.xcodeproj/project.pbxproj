@@ -53,12 +53,20 @@
 			);
 			target = 56448FE72CCFF757003435D0 /* FlowApp */;
 		};
+		564845C12D5D591200CF313E /* Exceptions for "FlowApp" folder in "FlowApp" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 56448FE72CCFF757003435D0 /* FlowApp */;
+		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		56448FEA2CCFF757003435D0 /* FlowApp */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
+				564845C12D5D591200CF313E /* Exceptions for "FlowApp" folder in "FlowApp" target */,
 				5631CE6F2CD02FC7003B38E8 /* Exceptions for "FlowApp" folder in "FlowAppTests" target */,
 			);
 			path = FlowApp;
@@ -397,7 +405,8 @@
 				DEVELOPMENT_ASSET_PATHS = "\"FlowApp/Preview Content\"";
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = FlowApp/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = FlowApp;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
@@ -438,7 +447,8 @@
 				DEVELOPMENT_ASSET_PATHS = "\"FlowApp/Preview Content\"";
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = FlowApp/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = FlowApp;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;

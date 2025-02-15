@@ -12,7 +12,7 @@ let package = Package(
             targets: ["Shared"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/gerardogrisolini/FlowKit.git", from: "2.5.2")
+        .package(url: "https://github.com/gerardogrisolini/FlowKit.git", from: "2.5.4")
     ],
     targets: [
         .target(

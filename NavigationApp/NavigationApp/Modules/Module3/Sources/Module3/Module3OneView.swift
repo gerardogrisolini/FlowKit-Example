@@ -14,7 +14,8 @@ public struct Module3OneView: View {
     public var body: some View {
         VStack(spacing: 32) {
             Button("Two") {
-                try? router.navigate(route: Module3Routes.two)
+                let model = InOutModel(value: "Hello World from One!")
+                try? router.navigate(route: Routes.Module3.two(model))
             }
         }
         .navigationTitle("Module3 - One")
@@ -23,4 +24,5 @@ public struct Module3OneView: View {
 
 #Preview {
     Module3OneView()
+        .navigationKit()
 }

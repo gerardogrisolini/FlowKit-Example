@@ -20,7 +20,7 @@ public struct Module3View: View {
         VStack(spacing: 32) {
             Text(model.value).font(.headline)
             Button("One") {
-                try? router.navigate(route: Module3Routes.one)
+                try? router.navigate(route: Routes.Module3.one)
             }
         }
         .navigationTitle("Module 3")
@@ -29,4 +29,5 @@ public struct Module3View: View {
 
 #Preview {
     Module3View(model: InOutModel(value: "Hello from preview"))
+        .navigationKit()
 }
