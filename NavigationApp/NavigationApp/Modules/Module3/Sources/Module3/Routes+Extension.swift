@@ -18,7 +18,7 @@ extension Routes {
 
 extension Routes.Module3: Routable {
 
-    var view: RouteView {
+    var view: RouteView? {
         switch self {
         case .one:
             return Module3OneView()
