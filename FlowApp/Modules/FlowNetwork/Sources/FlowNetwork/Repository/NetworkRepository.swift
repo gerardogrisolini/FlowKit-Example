@@ -13,6 +13,7 @@ public protocol NetworkRepositoryProtocol {
 
 public class NetworkRepository: NetworkRepositoryProtocol {
     public func getUserInfo() async throws -> UserInfoDTO {
-        UserInfoDTO(id: 1, isAdmin: true, date: Date())
+        try await Task.sleep(nanoseconds: 3_000_000_000)
+        return UserInfoDTO(id: 1, isAdmin: true, date: Date())
     }
 }

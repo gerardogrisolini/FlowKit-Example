@@ -25,7 +25,7 @@ struct SwiftUIView2: View, FlowViewProtocol {
 
             Button(FlowSharedKeys.fetch.localized) {
                 Task { [viewModel] in
-                    try await viewModel.fetchData()
+                    await viewModel.fetchData()
                 }
             }
             .buttonStyle(.plain)
@@ -36,20 +36,35 @@ struct SwiftUIView2: View, FlowViewProtocol {
         }
         .navigationTitle(FlowSharedKeys.page2.localized)
         .backgroundShared()
+        .task { [viewModel] in
+            await viewModel.fetchData()
+        }
     }
 }
 
 @Observable
 final class SwiftUIViewModel {
-    var data: UserInfoModel? = nil
-    let service: NetworkServiceProtocol
+    @ObservationIgnored let router: RouterProtocol
+    @ObservationIgnored let service: NetworkServiceProtocol
 
-    init(service: NetworkServiceProtocol = InjectedValues[\.network]) {
+    var data: UserInfoModel? = nil
+
+    init(
+        router: RouterProtocol = InjectedValues[\.router],
+        service: NetworkServiceProtocol = InjectedValues[\.network]
+    ) {
+        self.router = router
         self.service = service
     }
 
-    func fetchData() async throws {
-        data = try await service.getUserInfo()
+    func fetchData() async {
+        await router.present(.loader(style: .circle))
+        do {
+            data = try await service.getUserInfo()
+        } catch {
+            await router.present(.toast(message: error.localizedDescription, style: .error))
+        }
+        await router.dismiss()
     }
 }
 

@@ -19,20 +19,33 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tX8-Ud-nZ9">
-                    <rect key="frame" x="149" y="409" width="95.333333333333314" height="34.333333333333314"/>
-                    <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="plain" title="Module 3"/>
-                    <connections>
-                        <action selector="touchUpInside:" destination="-1" eventType="touchUpInside" id="nVd-oA-Dfb"/>
-                    </connections>
-                </button>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="cce-fP-bhJ">
+                    <rect key="frame" x="149" y="375.66666666666669" width="95.333333333333314" height="100.66666666666669"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tX8-Ud-nZ9">
+                            <rect key="frame" x="0.0" y="0.0" width="95.333333333333329" height="34.333333333333336"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title="Module 3"/>
+                            <connections>
+                                <action selector="touchUpInside:" destination="-1" eventType="touchUpInside" id="nVd-oA-Dfb"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HPg-m6-uQd">
+                            <rect key="frame" x="0.0" y="66.333333333333314" width="95.333333333333329" height="34.333333333333343"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title="Reload"/>
+                            <connections>
+                                <action selector="reloadTouchUpInside:" destination="-1" eventType="touchUpInside" id="L4Z-LF-66A"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                </stackView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="tX8-Ud-nZ9" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="p3X-im-xJk"/>
-                <constraint firstItem="tX8-Ud-nZ9" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="vij-eL-gmc"/>
+                <constraint firstItem="cce-fP-bhJ" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="t02-tG-pfZ"/>
+                <constraint firstItem="cce-fP-bhJ" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="xby-iE-Std"/>
             </constraints>
             <point key="canvasLocation" x="111" y="20"/>
         </view>
