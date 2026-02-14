@@ -20,7 +20,9 @@ public final class AppFlow: FlowProtocol {
     private let modelContainer: ModelContainer
 
     public init() {
-        modelContainer = InjectedValues[\.modelContainer]
+        modelContainer = MainActor.assumeIsolated {
+            InjectedValues[\.modelContainer]
+        }
     }
 
     public func runEvent(_ event: any FlowEventProtocol) async throws -> any InOutProtocol {

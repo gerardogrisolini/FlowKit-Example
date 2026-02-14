@@ -42,6 +42,7 @@ struct SwiftUIView2: View, FlowViewProtocol {
     }
 }
 
+@MainActor
 @Observable
 final class SwiftUIViewModel {
     @ObservationIgnored let router: RouterProtocol
@@ -58,13 +59,13 @@ final class SwiftUIViewModel {
     }
 
     func fetchData() async {
-        await router.present(.loader(style: .circle))
+        router.present(.loader(style: .circle))
         do {
             data = try await service.getUserInfo()
         } catch {
             await router.present(.toast(message: error.localizedDescription, style: .error))
         }
-        await router.dismiss()
+        router.dismiss()
     }
 }
 

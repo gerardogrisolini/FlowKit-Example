@@ -1,4 +1,4 @@
-// swift-tools-version: 6.0
+// swift-tools-version: 6.2
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
@@ -13,7 +13,7 @@ let package = Package(
             targets: ["FlowShared"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/gerardogrisolini/FlowKit.git", from: "2.5.7")
+        .package(url: "https://github.com/gerardogrisolini/FlowKit.git", from: "3.0.0")
     ],
     targets: [
         .target(

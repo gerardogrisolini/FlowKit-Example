@@ -7,11 +7,13 @@
 
 import Foundation
 
+@MainActor
 public protocol NetworkServiceProtocol {
     func getUserInfo() async throws -> UserInfoModel
 }
 
-public class NetworkService: NetworkServiceProtocol {
+@MainActor
+public final class NetworkService: NetworkServiceProtocol {
     lazy var repository: NetworkRepositoryProtocol = NetworkRepository()
 
     public func getUserInfo() async throws -> UserInfoModel {
@@ -21,4 +23,3 @@ public class NetworkService: NetworkServiceProtocol {
 
     public init() { }
 }
-

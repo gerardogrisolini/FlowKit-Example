@@ -12,6 +12,7 @@ private struct NetworkServiceProvider: @preconcurrency InjectionProvider {
 }
 
 public extension InjectedValues {
+    @MainActor
     var network: NetworkServiceProtocol {
         get { Self[NetworkServiceProvider.self] }
         set { Self[NetworkServiceProvider.self] = newValue }

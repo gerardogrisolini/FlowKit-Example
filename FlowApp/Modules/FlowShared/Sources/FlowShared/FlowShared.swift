@@ -27,6 +27,7 @@ private struct ModelContainerProvider: @preconcurrency InjectionProvider {
 
 public extension InjectedValues {
 
+    @MainActor
     var modelContainer: ModelContainer {
         get { Self[ModelContainerProvider.self] }
         set { Self[ModelContainerProvider.self] = newValue }
