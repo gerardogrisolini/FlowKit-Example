@@ -28,34 +28,20 @@ public struct ContentView: View, FlowViewProtocol {
     public var body: some View {
         ZStack(alignment: .bottom) {
             TabView(selection: $viewModel.selectedTab) {
-                SwiftUIWidget()
-                    .widget(on: self)
-                    .tag(TabbedItems.swiftUI)
-                UIKitWidget()
-                    .widget(on: self)
-                    .tag(TabbedItems.uiKit)
-                DataWidget(model: $viewModel.item)
-                    .widget(on: self)
-                    .tag(TabbedItems.data)
+                Tab(TabbedItems.swiftUI.title, systemImage: TabbedItems.swiftUI.iconName, value: TabbedItems.swiftUI) {
+                    SwiftUIWidget()
+                        .widget(on: self)
+                }
+                Tab(TabbedItems.uiKit.title, systemImage: TabbedItems.uiKit.iconName, value: TabbedItems.uiKit) {
+                    UIKitWidget()
+                        .widget(on: self)
+                }
+                Tab(TabbedItems.data.title, systemImage: TabbedItems.data.iconName, value: TabbedItems.data) {
+                    DataWidget(model: $viewModel.item)
+                        .widget(on: self)
+                }
             }
             .tabViewStyle(.tabBarOnly)
-
-            ZStack {
-                HStack{
-                    ForEach((TabbedItems.allCases), id: \.self) { item in
-                        Button {
-                            viewModel.selectedTab = item
-                        } label: {
-                            TabItem(title: item.title, imageName: item.iconName, isActive: (viewModel.selectedTab == item))
-                        }
-                        .buttonStyle(.plain)
-                    }
-                }
-                .padding(6)
-            }
-            .frame(height: 60)
-            .background(.green.opacity(0.2))
-            .cornerRadius(30)
         }
         .navigationTitle("FlowApp")
     }

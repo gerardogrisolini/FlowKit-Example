@@ -33,7 +33,6 @@ public struct SwiftUIView1: View, FlowViewProtocol {
                 .listRowBackground(Color.white.opacity(0.1))
             }
             .scrollContentBackground(.hidden)
-            .listStyle(.grouped)
             .uiKit { view in
                 if let v = view as? UICollectionView {
                     v.collectionViewLayout = compositionalLayout
